@@ -5,7 +5,9 @@
         "App.scss",
         "styles/sass/partials/_setup.scss",
         "styles/sass/partials/_variables.scss",
-        "styles/sass/partials/_global.scss",
+        "styles/sass/partials/_header.scss",
+        "styles/sass/partials/main.scss",
+        "styles/sass/partials/_footer.scss",
         "styles/sass/partials/_mediaQueries.scss"
     ],
     "names": [],
