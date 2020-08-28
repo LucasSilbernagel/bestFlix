@@ -51,26 +51,59 @@
 
 import React, { useState, useEffect } from "react";
 
-const Main = () => {
-  const [hasError, setErrors] = useState(false);
-  const [movies, setMovies] = useState({});
+function Main () {
+  const [movie, setMovie] = useState({});
+  const [searched, setQuery] = useState({});
 
-  async function fetchData() {
-    const res = await fetch(`http://www.omdbapi.com/?t=parasite&apikey=640dab7`);
-    res.json()
-      .then(res => setMovies(res))
-      .catch(err => setErrors(err));
+
+  const performSearch = (query = `${searched}`) => {
+    fetch(`http://www.omdbapi.com/?t=${query}&apikey=640dab7`)
+      .then(response => response.json())
+      .then(res => setMovie(res))
+        
+
   }
 
+
   useEffect(() => {
-    fetchData();
+    performSearch();
   });
 
+  const handleChange = (event) => {
+    setQuery(event.target.value)
+  }
+
+
+
   return (
-    <>
-      <span>{movies.Title}</span>
-      <span>Has error: {JSON.stringify(hasError)}</span>
-    </>
+    <main>
+      <div className="wrapper">
+        <h2>Welcome to the Shoppies, Shopify's official movies awards! Search for and nominate up to five movies, and check out the list of nominees!</h2>
+        <form action="#">
+          <label htmlFor="movieTitle">Movie title
+            <input onChange={handleChange} type="text" name="movieTitle" id="movieTitle"/>
+          </label>
+        </form>
+        <ul className="results" id="results">
+          {/* Search results go here */}
+          
+        </ul>
+        <ul className="nominations" id="nominations">
+          {/* Nominations go here */}
+            
+        </ul>
+
+
+        
+        <div className="movie">
+          <p>{movie.Title}</p>
+          <p>{movie.Year}</p>
+          <button>Nominate!</button>
+        </div>
+
+
+      </div>
+    </main>
   );
 };
 
