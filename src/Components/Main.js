@@ -85,8 +85,12 @@ function Main () {
           </label>
         </form>
         <ul className="results" id="results">
-          {/* Search results go here */}
-          
+        <li className="movie">
+          <p>{movie.Title}</p>
+            <p>{movie.Year}</p>
+            <p>{movie.Plot}</p>
+          <button>Nominate!</button>
+        </li>
         </ul>
         <ul className="nominations" id="nominations">
           {/* Nominations go here */}
@@ -95,11 +99,7 @@ function Main () {
 
 
         
-        <div className="movie">
-          <p>{movie.Title}</p>
-          <p>{movie.Year}</p>
-          <button>Nominate!</button>
-        </div>
+        
 
 
       </div>
