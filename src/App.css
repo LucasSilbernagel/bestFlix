@@ -234,4 +234,12 @@ html {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+.wrapper {
+  max-width: 1440px;
+}
+
+.movie {
+  background: red;
+}
 /*# sourceMappingURL=App.css.map */
