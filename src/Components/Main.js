@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
+import SearchResults from './SearchResults';
 
 function Main () {
   const [movie, setMovie] = useState({});
   const [searched, setQuery] = useState({});
+  const [inputValue, setInputValue] = useState("");
 
   const performSearch = (query = `${searched}`) => {
     fetch(`http://www.omdbapi.com/?t=${query}&apikey=640dab7`)
@@ -16,6 +18,7 @@ function Main () {
 
   const handleChange = (event) => {
     setQuery(event.target.value)
+    setInputValue(event.target.value)
   }
 
   return (
@@ -28,12 +31,8 @@ function Main () {
           </label>
         </form>
         <ul className="results" id="results">
-        <li className="movie">
-          <p>{movie.Title}</p>
-            <p>{movie.Year}</p>
-            <p>{movie.Plot}</p>
-          <button>Nominate!</button>
-        </li>
+          {/* Search results go here */}
+          <SearchResults />
         </ul>
         <ul className="nominations" id="nominations">
           {/* Nominations go here */}
