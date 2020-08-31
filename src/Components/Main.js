@@ -32,7 +32,7 @@ function Main () {
         </form>
         <ul className="results" id="results">
           {/* Search results go here */}
-          <SearchResults />
+          <SearchResults Title={movie.Title} Year={movie.Year} Plot={movie.Plot} />
         </ul>
         <ul className="nominations" id="nominations">
           {/* Nominations go here */}

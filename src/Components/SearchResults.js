@@ -8,7 +8,7 @@ function SearchResults (props) {
   return (
       <>
         <li className="movie">
-          <p>{movie.Title}</p>
+          <p>{props.Title}</p>
           <p>{props.Year}</p>
           <p>{props.Plot}</p>
           <button>Nominate!</button>
