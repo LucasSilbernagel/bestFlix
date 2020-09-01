@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useState} from "react";
 
-function SearchResults (props) {
+function SearchResults(props) {
+
+  const [nominated, setNominated] = useState([]);
+  
+  const handleClick = () => {
+    if (nominated.length < 4) {
+      nominated.push([props.Title, props.Year, props.Plot])
+    } else if (nominated.length === 4) {
+      alert("You have already picked 5 films!")
+    }
+  }
   
   if (!props.inputValue) {
     return null;
@@ -11,7 +21,7 @@ function SearchResults (props) {
           <p>{props.Title}</p>
           <p>{props.Year}</p>
           <p>{props.Plot}</p>
-          <button>Nominate!</button>
+          <button onClick={handleClick}>Nominate!</button>
         </li>
       </>
     );
