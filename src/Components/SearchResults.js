@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 
 function SearchResults (props) {
-
-  const [inputValue, setInputValue] = useState(props);
-  const [movie, setMovie] = useState(props);
   
-  return (
+  if (!props.inputValue) {
+    return null;
+  } else {
+    return (
       <>
         <li className="movie">
           <p>{props.Title}</p>
@@ -15,6 +15,7 @@ function SearchResults (props) {
         </li>
       </>
     );
+  }
 }
 
 export default SearchResults;
