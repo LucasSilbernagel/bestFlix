@@ -1,18 +1,21 @@
-import React, { useState} from "react";
+import React, { useState, useEffect} from "react";
 
 function SearchResults(props) {
 
-  const [nominated, setNominated] = useState([]);
-  
+  const [nominated, setNominated] = useState(props);
+
+  // const handleClick = () => {
+  //   setNominated(nominated, {Title: props.Title, Year: props.Year, Plot: props.Plot})
+  //   console.log(nominated);
+  // }
+
   const handleClick = () => {
-    if (nominated.length < 4) {
-      nominated.push([props.Title, props.Year, props.Plot])
-    } else if (nominated.length === 4) {
-      alert("You have already picked 5 films!")
-    }
+    const newArray = [...nominated, { Title: props.Title, Year: props.Year, Plot: props.Plot }]
+    setNominated(newArray)
+    console.log(nominated);
   }
   
-  if (!props.inputValue) {
+  if (!props.Title) {
     return null;
   } else {
     return (
