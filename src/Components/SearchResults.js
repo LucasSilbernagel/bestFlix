@@ -2,18 +2,18 @@ import React, { useState, useEffect} from "react";
 
 function SearchResults(props) {
 
-  const [nominated, setNominated] = useState(props);
+  const [nominated, setNominated] = useState([]);
 
-  // const handleClick = () => {
-  //   setNominated(nominated, {Title: props.Title, Year: props.Year, Plot: props.Plot})
-  //   console.log(nominated);
-  // }
+  useEffect(() => {
+    setNominated(props);
+  }, [props]);
 
   const handleClick = () => {
-    const newArray = [...nominated, { Title: props.Title, Year: props.Year, Plot: props.Plot }]
-    setNominated(newArray)
+    setNominated({Title: props.Title, Year: props.Year, Plot: props.Plot})
     console.log(nominated);
   }
+
+
   
   if (!props.Title) {
     return null;
