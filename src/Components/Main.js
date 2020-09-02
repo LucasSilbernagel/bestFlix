@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import SearchResults from './SearchResults';
 import Nominated from './Nominated';
 
@@ -14,13 +14,10 @@ function Main () {
       .then(res => setMovie(res))
   }
 
-  useEffect(() => {
-    performSearch();
-  });
-
   const handleChange = (event) => {
     setQuery(event.target.value)
     setInputValue(event.target.value)
+    performSearch(event.target.value);
   }
 
   return (
