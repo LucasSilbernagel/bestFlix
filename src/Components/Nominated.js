@@ -2,24 +2,25 @@ import React, { useState, useEffect} from "react";
 
 function Nominated(props) {
 
-  const [nominated, setNominated] = useState(props);
-
-  useEffect(() => {
-    setNominated(props);
-  }, [props]);
+  // const [nominated, setNominated] = useState(props);
 
   return null;
 
-  // return (
-  //   <>
-  //     <li className="nominated">
-  //       <p>{nominated.Title}</p>
-  //       <p>{nominated.Year}</p>
-  //       <p>{nominated.Plot}</p>
-  //       <button>Remove</button>
-  //     </li>
-  //   </>
-  // );
+  const handleClick = () => {
+    console.log(props.nominated);
+  }
+
+  return (
+    <>
+      <button onClick={handleClick}>console log</button>
+    </>
+  );
+
+  let nominatedMovies = Object.keys(props.nominated).map(function(key) {
+    return <p>Key: {key}, Value: {props.nominated[key]}</p>;
+  })
+
+  return nominatedMovies;
   
 }
 

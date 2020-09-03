@@ -4,17 +4,14 @@ function SearchResults(props) {
 
   const [nominated, setNominated] = useState([]);
 
-  useEffect(() => {
-    setNominated(props);
-  }, [props]);
+  // useEffect(() => {
+  //   setNominated(props);
+  // }, [props]);
 
   const handleClick = () => {
-    setNominated({Title: props.Title, Year: props.Year, Plot: props.Plot})
-    console.log(nominated);
+    setNominated(nominated.concat(props))
   }
 
-
-  
   if (!props.Title) {
     return null;
   } else {
