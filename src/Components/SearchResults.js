@@ -2,14 +2,14 @@ import React, { useState, useEffect} from "react";
 
 function SearchResults(props) {
 
-  const [nominated, setNominated] = useState([]);
+  // const [nominated, setNominated] = useState([]);
 
   // useEffect(() => {
   //   setNominated(props);
   // }, [props]);
 
   const handleClick = () => {
-    setNominated(nominated.concat(props))
+    props.setNominated(props.nominated.concat(props))
   }
 
   if (!props.Title) {
