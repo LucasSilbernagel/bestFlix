@@ -1,12 +1,6 @@
-import React, { useState, useEffect} from "react";
+import React from "react";
 
 function SearchResults(props) {
-
-  // const [nominated, setNominated] = useState([]);
-
-  // useEffect(() => {
-  //   setNominated(props);
-  // }, [props]);
 
   const handleClick = () => {
     props.setNominated(props.nominated.concat(props))
