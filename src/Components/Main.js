@@ -35,7 +35,7 @@ function Main () {
         </ul>
         <ul className="nominations" id="nominations">
           {/* Nominations go here */}
-          <Nominated Title={movie.Title} Year={movie.Year} Plot={movie.Plot} nominated={nominated} />
+          <Nominated Title={movie.Title} Year={movie.Year} Plot={movie.Plot} nominated={nominated} setNominated={setNominated} />
         </ul>
       </div>
     </main>
