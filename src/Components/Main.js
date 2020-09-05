@@ -20,26 +20,41 @@ function Main () {
     performSearch(event.target.value);
   }
 
-  return (
-    <main>
-      <div className="wrapper">
-        <h2>Welcome to the Shoppies, Shopify's official movies awards! Search for and nominate up to five movies, and check out the list of nominees!</h2>
-        <form action="#">
-          <label htmlFor="movieTitle">Movie title
-            <input onChange={handleChange} type="text" name="movieTitle" id="movieTitle"/>
-          </label>
-        </form>
-        <ul className="results" id="results">
-          {/* Search results go here */}
-          <SearchResults Title={movie.Title} Year={movie.Year} Plot={movie.Plot} inputValue={inputValue} nominated={nominated} setNominated={setNominated} />
-        </ul>
-        <ul className="nominations" id="nominations">
-          {/* Nominations go here */}
-          <Nominated nominated={nominated} setNominated={setNominated} />
-        </ul>
-      </div>
-    </main>
-  );
+  if (nominated.length === 5) {
+    return (
+      <main>
+        <div className="wrapper">
+          <h2>Welcome to the Shoppies, Shopify's official movies awards! Search for and nominate up to five movies, and check out the list of nominees!</h2>
+          <h3>You've nominated five movies!</h3>
+          <ul className="nominations" id="nominations">
+            {/* Nominations go here */}
+            <Nominated nominated={nominated} setNominated={setNominated} />
+          </ul>
+        </div>
+      </main>
+    );
+  } else {
+    return (
+      <main>
+        <div className="wrapper">
+          <h2>Welcome to the Shoppies, Shopify's official movies awards! Search for and nominate up to five movies, and check out the list of nominees!</h2>
+          <form action="#">
+            <label htmlFor="movieTitle">Movie title
+              <input onChange={handleChange} type="text" name="movieTitle" id="movieTitle"/>
+            </label>
+          </form>
+          <ul className="results" id="results">
+            {/* Search results go here */}
+            <SearchResults Title={movie.Title} Year={movie.Year} Plot={movie.Plot} inputValue={inputValue} nominated={nominated} setNominated={setNominated} />
+          </ul>
+          <ul className="nominations" id="nominations">
+            {/* Nominations go here */}
+            <Nominated nominated={nominated} setNominated={setNominated} />
+          </ul>
+        </div>
+      </main>
+    );
+  }
 };
 
 export default Main;
