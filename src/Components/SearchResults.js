@@ -6,7 +6,7 @@ function SearchResults(props) {
     props.setNominated(props.nominated.concat(props))
   }
 
-  let nominatedPlot = props.nominated.map((nominatedFilm, index) => {
+  let nominatedPlot = props.nominated.map((nominatedFilm) => {
     return nominatedFilm.Plot;
   })
 
