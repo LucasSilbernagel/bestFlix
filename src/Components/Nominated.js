@@ -3,10 +3,12 @@ import React from "react";
 function Nominated(props) {
 
   const removeNomination = (e) => {
-    const index = e.target.getAttribute("index");
-    props.setNominated(props.nominated.splice(index, 1))
-    console.log(props.nominated);
-  }
+    let index = e.target.getAttribute("index");
+    if (index > -1) {
+      props.nominated.splice(index, 1)
+      props.setNominated(props.nominated)
+    }
+  } 
 
   if (!props.nominated) {
     return null;
