@@ -1,28 +1,31 @@
 import React from "react";
 
-function Nominated(props) {
+function Nominated({ nominated, setNominated }) {
 
   const removeNomination = (e) => {
     let index = e.target.getAttribute("index");
     if (index > -1) {
-      props.nominated.splice(index, 1)
-      props.setNominated(props.nominated)
+      let newArray = [...nominated];
+      newArray.splice(index, 1);
+      setNominated(newArray);
     }
-  } 
-
-  if (!props.nominated) {
+  };
+  
+  if (!nominated) {
     return null;
   } else {
-    return  Object.keys(props.nominated).map((item, index) => {
-      return(
+    return nominated.map((item, index) => {
+      return (
         <li key={index}>
-          <p>{props.nominated[index].Title}</p>
-          <p>{props.nominated[index].Year}</p>
-          <p>{props.nominated[index].Plot}</p>
-          <button onClick={removeNomination} index={index}>Remove</button>
+          <p>{item.Title}</p>
+          <p>{item.Year}</p>
+          <p>{item.Plot}</p>
+          <button onClick={removeNomination} index={index}>
+            Remove
+          </button>
         </li>
-      )
-  })
+      );
+    });
   }
 }
 
