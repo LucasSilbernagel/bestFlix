@@ -45,7 +45,7 @@ function Main () {
           </form>
           <ul className="results" id="results">
             {/* Search results go here */}
-            <SearchResults Title={movie.Title} Year={movie.Year} Plot={movie.Plot} inputValue={inputValue} nominated={nominated} setNominated={setNominated} />
+            <SearchResults Poster={movie.Poster} Title={movie.Title} Year={movie.Year} Plot={movie.Plot} inputValue={inputValue} nominated={nominated} setNominated={setNominated} />
           </ul>
           <ul className="nominations" id="nominations">
             {/* Nominations go here */}
