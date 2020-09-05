@@ -16,9 +16,12 @@ function SearchResults(props) {
     return (
       <>
         <li className="movie">
-          <p>{props.Title}</p>
-          <p>{props.Year}</p>
-          <p>{props.Plot}</p>
+          <div className="imgContainer">
+            <img src={props.Poster} alt={props.Title}/>
+          </div>
+          <p>Title: {props.Title}</p>
+          <p>Year: {props.Year}</p>
+          <p>Plot: {props.Plot}</p>
           <button disabled={true}>Nominate!</button>
         </li>
       </>
@@ -27,9 +30,12 @@ function SearchResults(props) {
     return (
       <>
         <li className="movie">
-          <p>{props.Title}</p>
-          <p>{props.Year}</p>
-          <p>{props.Plot}</p>
+          <div className="imgContainer">
+            <img src={props.Poster} alt={props.Title}/>
+          </div>
+          <p>Title: {props.Title}</p>
+          <p>Year: {props.Year}</p>
+          <p>Plot: {props.Plot}</p>
           <button onClick={handleClick}>Nominate!</button>
         </li>
       </>

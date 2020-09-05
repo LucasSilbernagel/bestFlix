@@ -10,19 +10,20 @@ function Nominated({ nominated, setNominated }) {
       setNominated(newArray);
     }
   };
-  
+
   if (!nominated) {
     return null;
   } else {
     return nominated.map((item, index) => {
       return (
         <li key={index}>
-          <p>{item.Title}</p>
-          <p>{item.Year}</p>
-          <p>{item.Plot}</p>
-          <button onClick={removeNomination} index={index}>
-            Remove
-          </button>
+          <div className="imgContainer">
+            <img src={item.Poster} alt={item.Title}/>
+          </div>
+          <p>Title: {item.Title}</p>
+          <p>Year: {item.Year}</p>
+          <p>Plot: {item.Plot}</p>
+          <button onClick={removeNomination} index={index}>Remove</button>
         </li>
       );
     });
