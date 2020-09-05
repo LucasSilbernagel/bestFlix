@@ -9,7 +9,7 @@ function Main () {
   const [nominated, setNominated] = useState([]);
 
   const performSearch = (query = `${searched}`) => {
-    fetch(`http://www.omdbapi.com/?t=${query}&apikey=640dab7`)
+    fetch(`https://www.omdbapi.com/?t=${query}&apikey=640dab7`)
       .then(response => response.json())
       .then(res => setMovie(res))
   }
