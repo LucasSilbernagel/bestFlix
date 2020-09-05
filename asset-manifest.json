@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/shoppies/static/css/main.a42c770d.chunk.css",
-    "main.js": "/shoppies/static/js/main.2ff0b114.chunk.js",
-    "main.js.map": "/shoppies/static/js/main.2ff0b114.chunk.js.map",
+    "main.js": "/shoppies/static/js/main.378bb8dd.chunk.js",
+    "main.js.map": "/shoppies/static/js/main.378bb8dd.chunk.js.map",
     "runtime-main.js": "/shoppies/static/js/runtime-main.da667ea0.js",
     "runtime-main.js.map": "/shoppies/static/js/runtime-main.da667ea0.js.map",
     "static/js/2.a1fb0dbe.chunk.js": "/shoppies/static/js/2.a1fb0dbe.chunk.js",
     "static/js/2.a1fb0dbe.chunk.js.map": "/shoppies/static/js/2.a1fb0dbe.chunk.js.map",
     "index.html": "/shoppies/index.html",
-    "precache-manifest.621753149d560f0a985f61068783a06b.js": "/shoppies/precache-manifest.621753149d560f0a985f61068783a06b.js",
+    "precache-manifest.08997196dc2e3c73080861fb860e3c04.js": "/shoppies/precache-manifest.08997196dc2e3c73080861fb860e3c04.js",
     "service-worker.js": "/shoppies/service-worker.js",
     "static/css/main.a42c770d.chunk.css.map": "/shoppies/static/css/main.a42c770d.chunk.css.map",
     "static/js/2.a1fb0dbe.chunk.js.LICENSE.txt": "/shoppies/static/js/2.a1fb0dbe.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.da667ea0.js",
     "static/js/2.a1fb0dbe.chunk.js",
     "static/css/main.a42c770d.chunk.css",
-    "static/js/main.2ff0b114.chunk.js"
+    "static/js/main.378bb8dd.chunk.js"
   ]
 }
