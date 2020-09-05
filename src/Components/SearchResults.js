@@ -6,10 +6,6 @@ function SearchResults(props) {
     props.setNominated(props.nominated.concat(props))
   }
 
-  const consoleLog = () => {
-    console.log(props.nominated);
-  }
-
   if (!props.Title) {
     return null;
   } else {
@@ -20,7 +16,6 @@ function SearchResults(props) {
           <p>{props.Year}</p>
           <p>{props.Plot}</p>
           <button onClick={handleClick}>Nominate!</button>
-          <button onClick={consoleLog}>console log</button>
         </li>
       </>
     );
