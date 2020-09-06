@@ -1,20 +1,18 @@
 import React from 'react';
-// import Header from './Header';
-// import Footer from './Footer';
+import { Link } from "react-router-dom";
 
 function Nominations() {
   return (
     <>
-      {/* <Header /> */}
       <main>
         <div className="wrapper">
+        <Link to="/shoppies">Back</Link>
           <ul>
             {/* Saved nominations go here */}
-            <li>NOMINATIONS COMPONENT</li>
+            
           </ul>
         </div>
       </main>
-      {/* <Footer /> */}
     </>
   );
 }
