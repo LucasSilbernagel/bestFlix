@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import SearchResults from './SearchResults';
 import Nominated from './Nominated';
+import { Link } from "react-router-dom";
 
 function Main () {
   const [movie, setMovie] = useState({});
@@ -38,6 +39,7 @@ function Main () {
       <main>
         <div className="wrapper">
           <h2>Welcome to the Shoppies, Shopify's official movies awards! Search for and nominate up to five movies, and check out the list of nominees!</h2>
+          <Link to="/nominations">Nominations </Link>
           <form action="#">
             <label htmlFor="movieTitle">Movie title
               <input onChange={handleChange} type="text" name="movieTitle" id="movieTitle"/>
