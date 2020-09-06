@@ -27,6 +27,7 @@ function Main () {
         <div className="wrapper">
           <h2>Welcome to the Shoppies, Shopify's official movies awards! Search for and nominate up to five movies, and check out the list of nominees!</h2>
           <h3>You've nominated five movies!</h3>
+          <Link to="/nominations">See all nominations</Link>
           <ul className="nominations" id="nominations">
             {/* Nominations go here */}
             <Nominated nominated={nominated} setNominated={setNominated} />
@@ -39,7 +40,7 @@ function Main () {
       <main>
         <div className="wrapper">
           <h2>Welcome to the Shoppies, Shopify's official movies awards! Search for and nominate up to five movies, and check out the list of nominees!</h2>
-          <Link to="/nominations">Nominations </Link>
+          <Link to="/nominations">See all nominations</Link>
           <form action="#">
             <label htmlFor="movieTitle">Movie title
               <input onChange={handleChange} type="text" name="movieTitle" id="movieTitle"/>
