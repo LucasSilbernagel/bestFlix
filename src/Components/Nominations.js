@@ -7,15 +7,19 @@ function Nominations() {
   const [savedNominations, setSavedNominations] = useState([]);
 
   useEffect(() => {
+    let mounted = true;
     const dbRef = firebase.database().ref();
-    dbRef.on('value', (response) => {
-      const newState = [];
-      const data = response.val();
-      for (let key in data) {
-        newState.push(data[key]);
-      }
-      setSavedNominations(newState);
-    });
+    if (mounted) {
+      dbRef.on('value', (response) => {
+        const newState = [];
+        const data = response.val();
+        for (let key in data) {
+          newState.push(data[key]);
+        }
+        setSavedNominations(newState);
+      });
+    }
+    return () => mounted = false;
   }, []);
 
   return (
