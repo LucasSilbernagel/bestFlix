@@ -4,7 +4,7 @@ function Footer() {
   return (
       <footer>
         <div className="wrapper">
-          <p>Copyright 2020 <a href="https://lucassilbernagel.com/" target="_blank" rel="noopener noreferrer">Lucas Silbernagel</a></p>
+        <p><a href="https://lucassilbernagel.com/" target="_blank" rel="noopener noreferrer">Lucas Silbernagel</a> <i className="far fa-copyright" aria-label="copyright"></i> 2020</p>
         </div>
       </footer>
   );

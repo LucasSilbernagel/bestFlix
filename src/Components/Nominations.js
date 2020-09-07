@@ -6,6 +6,7 @@ function Nominations() {
 
   const [savedNominations, setSavedNominations] = useState([]);
 
+  // Pull saved movie nominations from firebase
   useEffect(() => {
     let mounted = true;
     const dbRef = firebase.database().ref();
@@ -31,13 +32,13 @@ function Nominations() {
             {/* Saved nominations go here */}
             {savedNominations.map((movie, index) => {
             return (
-              <li key={index}>
+              <li key={index} className="movieContainer">
                 <div className="imgContainer">
                   <img src={movie.Poster} alt={movie.Title}/>
                 </div>
-                <p>Title: {movie.Title}</p>
-                <p>Year: {movie.Year}</p>
-                <p>Plot: {movie.Plot}</p>
+                <p className="movieTitle">Title: {movie.Title}</p>
+                <p className="movieYear">Year: {movie.Year}</p>
+                <p className="moviePlot">Plot: {movie.Plot}</p>
               </li>
             )
           })}

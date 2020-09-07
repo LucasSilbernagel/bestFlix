@@ -1,8 +1,7 @@
-// firebase.js
 import firebase from 'firebase/app';
 import 'firebase/database';
 
-// Your web app's Firebase configuration
+// Firebase configuration
 var firebaseConfig = {
   apiKey: "AIzaSyDht736HropBXtwFbjFpGLxigfknVO9_wQ",
   authDomain: "shoppies-20c2e.firebaseapp.com",

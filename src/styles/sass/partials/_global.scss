@@ -1,3 +1,17 @@
 .wrapper {
   max-width: 1440px;
 }
+
+img {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
