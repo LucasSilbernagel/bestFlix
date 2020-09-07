@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import SearchResults from './SearchResults';
 import Nominated from './Nominated';
 import { Link } from "react-router-dom";
+import Save from './Save';
 
 function Main () {
   const [movie, setMovie] = useState({});
@@ -32,6 +33,7 @@ function Main () {
             {/* Nominations go here */}
             <Nominated nominated={nominated} setNominated={setNominated} />
           </ul>
+          <Save nominated={nominated} setNominated={setNominated} />
         </div>
       </main>
     );
@@ -54,6 +56,7 @@ function Main () {
             {/* Nominations go here */}
             <Nominated nominated={nominated} setNominated={setNominated} />
           </ul>
+          <Save nominated={nominated} setNominated={setNominated} />
         </div>
       </main>
     );
