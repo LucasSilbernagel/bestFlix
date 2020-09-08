@@ -33,6 +33,9 @@ function Main () {
             <h2>Welcome to The Shoppies, Shopify's official movie awards! Search for and nominate up to five movies, and check out the list of nominees!</h2>
           </div>
           <h3 className="maximum">You've nominated five movies!</h3>
+          <div className="saveContainer">
+            <Save nominated={nominated} setNominated={setNominated} />
+          </div>
           <Link to="/nominations" className="link">View nominees <span><i class="fas fa-arrow-right"></i></span></Link>
           <ul className="nominations" id="nominations">
             {/* Nominations go here */}
