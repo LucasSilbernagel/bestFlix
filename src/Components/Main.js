@@ -29,7 +29,9 @@ function Main () {
     return (
       <main>
         <div className="wrapper">
-          <h2>Welcome to The Shoppies, Shopify's official movie awards! Search for and nominate up to five movies, and check out the list of nominees!</h2>
+          <div className="centerWrapper">
+            <h2>Welcome to The Shoppies, Shopify's official movie awards! Search for and nominate up to five movies, and check out the list of nominees!</h2>
+          </div>
           <h3>You've nominated five movies!</h3>
           <Link to="/nominations" className="link">View nominees <span><i class="fas fa-arrow-right"></i></span></Link>
           <ul className="nominations" id="nominations">
@@ -47,12 +49,16 @@ function Main () {
     return (
       <main>
         <div className="wrapper">
-          <h2>Welcome to The Shoppies, Shopify's official movie awards! Search for and nominate up to five movies, and check out the list of nominees!</h2>
+          <div className="centerWrapper">
+            <h2>Welcome to The Shoppies, Shopify's official movie awards! Search for and nominate up to five movies, and check out the list of nominees!</h2>
+          </div>
           <Link to="/nominations" className="link">View nominees <span><i className="fas fa-arrow-right"></i></span></Link>
+          <div className="centerWrapper">
           <form action="#">
             <label htmlFor="movieTitle" className="sr-only">Movie title:</label>
             <input onChange={handleChange} type="text" name="movieTitle" className="movieTitle" id="movieTitle" placeholder="Type a movie title" />
-          </form>
+            </form>
+          </div>
           <ul className="results" id="results">
             {/* Search results go here */}
             <SearchResults Poster={movie.Poster} Title={movie.Title} Year={movie.Year} Plot={movie.Plot} inputValue={inputValue} nominated={nominated} setNominated={setNominated} />
