@@ -46,6 +46,7 @@ function Nominations() {
             )
           })}
           </ul>
+          <Link to="/shoppies" className="link2"><span><i className="fas fa-arrow-left"></i></span> Back</Link>
         </div>
       </main>
     </>
