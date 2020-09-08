@@ -59,6 +59,7 @@ h2 {
   }
 }
 
+// Search input
 .movieTitle {
   width: 100%;
   font-size: 1.5rem;
@@ -102,6 +103,7 @@ ul {
   }
 }
 
+// Center the "save nominations" button and add flashing animation
 .saveContainer {
   display: flex;
   flex-direction: column;
@@ -138,6 +140,7 @@ ul {
   }
 }
 
+// Page title
 .awardNominees {
   text-align: center;
   font-size: 2rem;
@@ -148,6 +151,7 @@ ul {
   margin-bottom: 50px;
 }
 
+// Message to user about reaching 5 nominations
 .maximum {
   color: $accent2;
   padding: 5px;
