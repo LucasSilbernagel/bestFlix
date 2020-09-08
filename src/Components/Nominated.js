@@ -19,14 +19,17 @@ function Nominated({ nominated, setNominated }) {
   } else {
     return nominated.map((item, index) => {
       return (
-        <li key={index} className="movieContainer">
+        <li key={index} className="movie">
+          <h3>Nomination #{index + 1}:</h3>
           <div className="imgContainer">
-            <img src={item.Poster} alt={item.Title}/>
+            <img src={item.Poster} alt={item.Title} />
           </div>
-          <p className="movieTitle">Title: {item.Title}</p>
-          <p className="movieYear">Year: {item.Year}</p>
-          <p className="moviePlot">Plot: {item.Plot}</p>
-          <button onClick={removeNomination} index={index}>Remove</button>
+          <div className="movieText">
+            <p><span className="info">Title:</span> {item.Title}</p>
+            <p><span className="info">Year:</span> {item.Year}</p>
+            <p><span className="info">Plot:</span> {item.Plot}</p>
+          </div>
+          <button onClick={removeNomination} index={index} className="nominate">Remove nomination</button>
         </li>
       );
     });

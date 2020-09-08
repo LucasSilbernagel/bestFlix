@@ -28,17 +28,20 @@ function Nominations() {
       <main>
         <div className="wrapper">
           <Link to="/shoppies" className="link2"><span><i className="fas fa-arrow-left"></i></span> Back</Link>
+          <h3 className="awardNominees">Award nominees:</h3>
           <ul>
             {/* Saved nominations go here */}
             {savedNominations.map((movie, index) => {
             return (
-              <li key={index} className="movieContainer">
+              <li key={index} className="movie">
                 <div className="imgContainer">
-                  <img src={movie.Poster} alt={movie.Title}/>
+                  <img src={movie.Poster} alt={movie.Title} />
                 </div>
-                <p className="movieTitle">Title: {movie.Title}</p>
-                <p className="movieYear">Year: {movie.Year}</p>
-                <p className="moviePlot">Plot: {movie.Plot}</p>
+                <div className="movieText">
+                  <p><span className="info">Title:</span> {movie.Title}</p>
+                  <p><span className="info">Year:</span> {movie.Year}</p>
+                  <p><span className="info">Plot:</span> {movie.Plot}</p>
+                </div>
               </li>
             )
           })}

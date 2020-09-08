@@ -36,7 +36,9 @@ function Main () {
             {/* Nominations go here */}
             <Nominated nominated={nominated} setNominated={setNominated} />
           </ul>
-          <Save nominated={nominated} setNominated={setNominated} />
+          <div className="saveContainer">
+            <Save nominated={nominated} setNominated={setNominated} />
+          </div>
         </div>
       </main>
     );
@@ -59,7 +61,9 @@ function Main () {
             {/* Nominations go here */}
             <Nominated nominated={nominated} setNominated={setNominated} />
           </ul>
-          <Save nominated={nominated} setNominated={setNominated} />
+          <div className="saveContainer">
+            <Save nominated={nominated} setNominated={setNominated} />
+          </div>
         </div>
       </main>
     );
