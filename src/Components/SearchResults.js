@@ -20,13 +20,16 @@ function SearchResults(props) {
     return (
       <>
         <li className="movie">
+          <h3>Search result:</h3>
           <div className="imgContainer">
             <img src={props.Poster} alt={props.Title}/>
           </div>
-          <p>Title: {props.Title}</p>
-          <p>Year: {props.Year}</p>
-          <p>Plot: {props.Plot}</p>
-          <button disabled={true}>Nominate!</button>
+          <div className="movieText">
+            <p><span className="info">Title:</span> {props.Title}</p>
+            <p><span className="info">Year:</span> {props.Year}</p>
+            <p><span className="info">Plot:</span> {props.Plot}</p>
+          </div>
+          <button disabled={true} className="nominate">Nominate!</button>
         </li>
       </>
     );
@@ -36,13 +39,16 @@ function SearchResults(props) {
     return (
       <>
         <li className="movie">
+          <h3>Search result:</h3>
           <div className="imgContainer">
             <img src={props.Poster} alt={props.Title}/>
           </div>
-          <p>Title: {props.Title}</p>
-          <p>Year: {props.Year}</p>
-          <p>Plot: {props.Plot}</p>
-          <button onClick={handleClick}>Nominate!</button>
+          <div className="movieText">
+            <p><span className="info">Title:</span> {props.Title}</p>
+            <p><span className="info">Year:</span> {props.Year}</p>
+            <p><span className="info">Plot:</span> {props.Plot}</p>
+          </div>
+          <button onClick={handleClick} className="nominate">Nominate!</button>
         </li>
       </>
     );

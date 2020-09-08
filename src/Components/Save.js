@@ -15,6 +15,7 @@ function Save({ nominated, setNominated }) {
       })
     })
     setNominated([]);
+    alert("Nominations saved!")
   }
 
   // When a movie is nominated, display a button to save nominations and push to firebase

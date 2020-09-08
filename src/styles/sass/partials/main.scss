@@ -34,10 +34,107 @@ h2 {
   }
 }
 
+.link2 {
+  display: block;
+  color: $white;
+  font-size: 1.5rem;
+  text-decoration: none;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  text-align: center;
+  position: relative;
+  font-weight: 700;
+    span {
+      position: absolute;
+      left: 85px;
+      transition: 0.4s;
+    }
+}
+.link2:hover,
+.link2:focus {
+  span {
+    transform: translateX(-0.4em);
+  }
+}
+
 .movieTitle {
   width: 100%;
   font-size: 1.5rem;
   padding: 10px;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.movie {
+  padding: 10px;
+  background: white;
+  color: $accent;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  h3 {
+    text-align: center;
+    color: $grey;
+    text-decoration: underline;
+    color: $accent2;
+  }
+  .imgContainer {
+    padding: 10px;
+    max-width: 270px;
+    background: $lightBackground;
+  }
+  .movieText {
+    background: $lightBackground;
+    padding: 10px;
+  }
+  .info {
+    text-decoration: underline;
+    font-weight: 700;
+  }
+}
+
+.saveContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  button {
+    background: $white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    animation: flashing 2000ms infinite;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  button:hover,
+  button:focus {
+  cursor: pointer;
+  background: $white;
+  }
+  button:active {
+    background: $white;
+  }
+  @keyframes flashing {
+    0% {
+      color: lighten($accent, 10%);
+      box-shadow: 2px 5px $black;
+    }
+    50% {
+      color: lighten($accent, 30%);
+      box-shadow: 5px 10px $black;
+    }
+    100% {
+      color: lighten($accent, 10%);
+      box-shadow: 2px 5px $black;
+    }
+  }
+}
+
+.awardNominees {
+  text-align: center;
+  font-size: 2rem;
+  border-bottom: 1px solid $white;
+  padding: 5px;
 }

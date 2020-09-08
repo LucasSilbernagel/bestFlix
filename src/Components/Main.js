@@ -31,12 +31,14 @@ function Main () {
         <div className="wrapper">
           <h2>Welcome to The Shoppies, Shopify's official movie awards! Search for and nominate up to five movies, and check out the list of nominees!</h2>
           <h3>You've nominated five movies!</h3>
-          <Link to="/nominations" className="link">View nominees <span className="rightArrow"><i class="fas fa-arrow-right"></i></span></Link>
+          <Link to="/nominations" className="link">View nominees <span><i class="fas fa-arrow-right"></i></span></Link>
           <ul className="nominations" id="nominations">
             {/* Nominations go here */}
             <Nominated nominated={nominated} setNominated={setNominated} />
           </ul>
-          <Save nominated={nominated} setNominated={setNominated} />
+          <div className="saveContainer">
+            <Save nominated={nominated} setNominated={setNominated} />
+          </div>
         </div>
       </main>
     );
@@ -46,7 +48,7 @@ function Main () {
       <main>
         <div className="wrapper">
           <h2>Welcome to The Shoppies, Shopify's official movie awards! Search for and nominate up to five movies, and check out the list of nominees!</h2>
-          <Link to="/nominations" className="link">View nominees <span className="rightArrow"><i className="fas fa-arrow-right"></i></span></Link>
+          <Link to="/nominations" className="link">View nominees <span><i className="fas fa-arrow-right"></i></span></Link>
           <form action="#">
             <label htmlFor="movieTitle" className="sr-only">Movie title:</label>
             <input onChange={handleChange} type="text" name="movieTitle" className="movieTitle" id="movieTitle" placeholder="Type a movie title" />
@@ -59,7 +61,9 @@ function Main () {
             {/* Nominations go here */}
             <Nominated nominated={nominated} setNominated={setNominated} />
           </ul>
-          <Save nominated={nominated} setNominated={setNominated} />
+          <div className="saveContainer">
+            <Save nominated={nominated} setNominated={setNominated} />
+          </div>
         </div>
       </main>
     );
