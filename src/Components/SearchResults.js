@@ -20,7 +20,7 @@ function SearchResults(props) {
     return (
       <>
         <li className="movie">
-          <h3>Search result:</h3>
+          <h3>Search result for {props.searched}:</h3>
           <div className="imgContainer">
             <img src={props.Poster} alt={props.Title}/>
           </div>
@@ -39,7 +39,7 @@ function SearchResults(props) {
     return (
       <>
         <li className="movie">
-          <h3>Search result:</h3>
+          <h3>Search result for {props.searched}:</h3>
           <div className="imgContainer">
             <img src={props.Poster} alt={props.Title}/>
           </div>
