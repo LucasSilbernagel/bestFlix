@@ -1,26 +1,25 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import firebase from './firebase';
 
 function Nominations() {
 
   const [savedNominations, setSavedNominations] = useState([]);
+  const mountedRef = useRef(true);
 
   // Pull saved movie nominations from firebase
   useEffect(() => {
-    let mounted = true;
     const dbRef = firebase.database().ref();
-    if (mounted) {
       dbRef.on('value', (response) => {
         const newState = [];
         const data = response.val();
         for (let key in data) {
+          if (!mountedRef.current) return null;
           newState.push(data[key]);
         }
         setSavedNominations(newState);
+        mountedRef.current = false
       });
-    }
-    return () => mounted = false;
   }, []);
 
   return (
