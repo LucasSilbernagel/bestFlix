@@ -25,9 +25,9 @@ function SearchResults(props) {
             <img src={props.Poster} alt={props.Title}/>
           </div>
           <div className="movieText">
-            <p><span className="info">Title:</span> {props.Title}</p>
-            <p><span className="info">Year:</span> {props.Year}</p>
-            <p><span className="info">Plot:</span> {props.Plot}</p>
+            <p><span className="info">Title</span>: {props.Title}</p>
+            <p><span className="info">Year</span>: {props.Year}</p>
+            <p><span className="info">Plot</span>: {props.Plot}</p>
           </div>
           <button disabled={true} className="nominate">Nominate!</button>
         </li>
@@ -44,9 +44,9 @@ function SearchResults(props) {
             <img src={props.Poster} alt={props.Title}/>
           </div>
           <div className="movieText">
-            <p><span className="info">Title:</span> {props.Title}</p>
-            <p><span className="info">Year:</span> {props.Year}</p>
-            <p><span className="info">Plot:</span> {props.Plot}</p>
+            <p><span className="info">Title</span>: {props.Title}</p>
+            <p><span className="info">Year</span>: {props.Year}</p>
+            <p><span className="info">Plot</span>: {props.Plot}</p>
           </div>
           <button onClick={handleClick} className="nominate">Nominate!</button>
         </li>

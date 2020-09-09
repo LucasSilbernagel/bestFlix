@@ -38,9 +38,9 @@ function Nominations() {
                   <img src={movie.Poster} alt={movie.Title} />
                 </div>
                 <div className="movieText">
-                  <p><span className="info">Title:</span> {movie.Title}</p>
-                  <p><span className="info">Year:</span> {movie.Year}</p>
-                  <p><span className="info">Plot:</span> {movie.Plot}</p>
+                  <p><span className="info">Title</span>: {movie.Title}</p>
+                  <p><span className="info">Year</span>: {movie.Year}</p>
+                  <p><span className="info">Plot</span>: {movie.Plot}</p>
                 </div>
               </li>
             )
