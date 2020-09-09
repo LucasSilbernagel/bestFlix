@@ -11,20 +11,26 @@ h2 {
   margin: 0;
 }
 
-.link {
+.link,
+.link2 {
   display: block;
   color: $white;
   font-size: 1.5rem;
   text-decoration: none;
-  margin-top: 50px;
-  margin-bottom: 50px;
   text-align: center;
   position: relative;
   font-weight: 700;
+  span {
+    position: absolute;
+    transition: 0.4s;
+  }
+}
+
+.link {
+  margin-top: 50px;
+  margin-bottom: 50px;
     span {
-      position: absolute;
       padding-left: 8px;
-      transition: 0.4s;
     }
 }
 .link:hover,
@@ -35,21 +41,12 @@ h2 {
 }
 
 .link2 {
-  display: block;
   max-width: 300px;
-  color: $white;
-  font-size: 1.5rem;
-  text-decoration: none;
   margin: 0 auto;
   margin-top: 10px;
   margin-bottom: 30px;
-  text-align: center;
-  position: relative;
-  font-weight: 700;
     span {
-      position: absolute;
       left: 85px;
-      transition: 0.4s;
     }
 }
 .link2:hover,
@@ -76,7 +73,7 @@ ul {
 
 .movie {
   padding: 10px;
-  background: white;
+  background: $white;
   color: $accent;
   font-size: 1.2rem;
   line-height: 1.6;
