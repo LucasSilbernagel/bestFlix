@@ -4,9 +4,10 @@ function SearchResults(props) {
 
   // Nominate a movie from search results
   const handleClick = () => {
-    props.setNominated(props.nominated.concat(props))
+    props.setNominated(props.nominated.concat(props));
   }
 
+  // The plot of each nominated movie
   let nominatedPlot = props.nominated.map((nominatedFilm) => {
     return nominatedFilm.Plot;
   })
