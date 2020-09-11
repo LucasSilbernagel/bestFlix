@@ -16,7 +16,6 @@ http://www.omdbapi.com/
 ## Future Goals
 
 - Display a counter for how many times each movie has been nominated
-- Display multiple search results for each query
 - Use modals to display information to the user
 - Animations for loading, adding/deleting movies, notifications
 - Improve the design
