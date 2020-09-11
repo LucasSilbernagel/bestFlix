@@ -28,7 +28,7 @@ function Nominations() {
         <div className="wrapper">
           <Link to="/shoppies" className="link2"><span><i className="fas fa-arrow-left"></i></span> Back</Link>
           <h3 className="awardNominees">Award nominees:</h3>
-          <ul>
+          <ul className="nominations">
             {/* Saved nominations go here */}
             {savedNominations.map((movie, index) => {
             return (

@@ -66,6 +66,9 @@ function Main () {
             {/* Search results go here */}
             <SearchResults Poster={movie.Poster} Title={movie.Title} Year={movie.Year} Plot={movie.Plot} inputValue={inputValue} nominated={nominated} setNominated={setNominated} searched={searched} />
           </ul>
+          <div className="saveContainer">
+            <Save nominated={nominated} setNominated={setNominated} />
+          </div>
           <ul className="nominations" id="nominations">
             {/* Nominations go here */}
             <Nominated nominated={nominated} setNominated={setNominated} />

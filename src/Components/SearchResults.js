@@ -19,8 +19,8 @@ function SearchResults(props) {
   } else if (nominatedPlot.includes(props.Plot)) {
     return (
       <>
-        <li className="movie">
-          <h3>Search result for {props.searched}:</h3>
+        <li className="searchResult">
+          <h3>Search result for <span>{props.searched}</span></h3>
           <div className="imgContainer">
             <img src={props.Poster} alt={props.Title}/>
           </div>
@@ -29,7 +29,7 @@ function SearchResults(props) {
             <p><span className="info">Year</span>: {props.Year}</p>
             <p><span className="info">Plot</span>: {props.Plot}</p>
           </div>
-          <button disabled={true} className="nominate">Nominate!</button>
+          <button disabled={true} className="nominate disabled">Nominate!</button>
         </li>
       </>
     );
@@ -38,8 +38,8 @@ function SearchResults(props) {
   } else {
     return (
       <>
-        <li className="movie">
-          <h3>Search result for {props.searched}:</h3>
+        <li className="searchResult">
+          <h3>Search result for <span>{props.searched}</span></h3>
           <div className="imgContainer">
             <img src={props.Poster} alt={props.Title}/>
           </div>
