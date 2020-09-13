@@ -1,5 +1,6 @@
 import React from "react";
 import firebase from './firebase';
+import Swal from 'sweetalert2';
 
 function Save({ nominated, setNominated }) {
 
@@ -15,8 +16,14 @@ function Save({ nominated, setNominated }) {
       })
     })
     setNominated([]);
-    alert("Nominations saved!")
-    window.location.reload(false);
+    // Sweet alert
+    Swal.fire({
+      title: 'Nominations saved!',
+      text: 'Make sure to check out the official list of nominees!',
+      confirmButtonText: 'Ok',
+    }).then(function () {
+      window.location.reload();
+    })
   }
 
   // When a movie is nominated, display a button to save nominations and push to firebase
