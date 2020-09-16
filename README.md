@@ -16,7 +16,6 @@ http://www.omdbapi.com/
 ## Future Goals
 
 - Display a counter for how many times each saved movie has been nominated
-- Animations for loading, adding/deleting movies, notifications
 - Improve the design and user experience
 
 ## This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
