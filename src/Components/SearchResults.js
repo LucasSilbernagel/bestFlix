@@ -6,12 +6,19 @@ function SearchResults(props) {
   // Nominate a movie from search results
   const handleClick = () => {
     props.setNominated(props.nominated.concat(props));
-    // Sweet alert
-    Swal.fire({
-      title: 'Nominated!',
-      text: "You can nominate up to 5 movies. Once you're ready, save them to the official list of nominees!",
-      confirmButtonText: 'Ok',
-    })
+    // Sweet alerts
+    if (props.nominated.length === 0) {
+      Swal.fire({
+        title: 'Nominated!',
+        text: "You can nominate up to 5 movies. Once you're ready, save them to the official list of nominees!",
+        confirmButtonText: 'Ok',
+      })
+    } else {
+      Swal.fire({
+        title: 'Nominated!',
+        confirmButtonText: 'Ok',
+      })
+    }
   }
 
   // The plot of each nominated movie
