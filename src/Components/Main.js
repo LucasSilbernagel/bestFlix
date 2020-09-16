@@ -3,18 +3,24 @@ import SearchResults from './SearchResults';
 import Nominated from './Nominated';
 import { Link } from "react-router-dom";
 import Save from './Save';
+import Loading from './Loading';
 
 function Main () {
   const [movie, setMovie] = useState({});
   const [searched, setQuery] = useState({});
   const [inputValue, setInputValue] = useState("");
   const [nominated, setNominated] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   // API call
   const performSearch = (query = `${searched}`) => {
-    fetch(`https://www.omdbapi.com/?type=movie&t=${query}&apikey=2b4018f5`)
-      .then(response => response.json())
-      .then(res => setMovie(res))
+    setLoading(true)
+    setTimeout(() => {
+      fetch(`https://www.omdbapi.com/?type=movie&t=${query}&apikey=2b4018f5`)
+        .then(response => response.json())
+        .then(res => setMovie(res))
+        .then(setLoading(false))
+    }, 1000)
   }
 
   // As text input content changes, update API search query and make API call
@@ -61,6 +67,9 @@ function Main () {
             <label htmlFor="movieTitle" className="sr-only">Movie title:</label>
             <input onChange={handleChange} type="text" name="movieTitle" className="movieTitle" id="movieTitle" placeholder="Type a movie title" />
             </form>
+            <div className="loadingContainer">
+              <Loading loading={loading} />
+            </div>
           </div>
           <ul className="results" id="results">
             {/* Search results go here */}
