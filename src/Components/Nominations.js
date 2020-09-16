@@ -1,15 +1,19 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import firebase from './firebase';
+import Loading from './Loading';
 
 function Nominations() {
 
   const [savedNominations, setSavedNominations] = useState([]);
+  const [loading, setLoading] = useState(false);
   const mountedRef = useRef(true);
 
   // Pull saved movie nominations from firebase
   useEffect(() => {
+    setLoading(true);
     const dbRef = firebase.database().ref();
+    setTimeout(() => {
       dbRef.on('value', (response) => {
         const newState = [];
         const data = response.val();
@@ -19,7 +23,9 @@ function Nominations() {
         }
         setSavedNominations(newState);
         mountedRef.current = false
+        setLoading(false)
       });
+    }, 1000)
   }, []);
 
   return (
@@ -28,6 +34,9 @@ function Nominations() {
         <div className="wrapper">
           <Link to="/shoppies" className="link2"><span><i className="fas fa-arrow-left"></i></span> Back</Link>
           <h3 className="awardNominees">Award nominees:</h3>
+          <div className="loadingContainer">
+            <Loading loading={loading} />
+          </div>
           <ul className="nominations">
             {/* Saved nominations go here */}
             {savedNominations.map((movie, index) => {
