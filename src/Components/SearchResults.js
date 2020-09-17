@@ -10,12 +10,23 @@ function SearchResults(props) {
     if (props.nominated.length === 0) {
       Swal.fire({
         title: 'Nominated!',
+        confirmButtonColor: "#00806a",
         text: "You can nominate up to 5 movies. Once you're ready, save them to the official list of nominees!",
         confirmButtonText: 'Ok',
       })
-    } else {
+    } else if (props.nominated.length === 4) {
       Swal.fire({
         title: 'Nominated!',
+        confirmButtonColor: "#00806a",
+        text: "You've nominated 5 movies! Save them to the official list of nominees, or change your nomination list first by removing one or more movies!",
+        confirmButtonText: 'Ok',
+      })
+    }
+    
+    else {
+      Swal.fire({
+        title: 'Nominated!',
+        confirmButtonColor: "#00806a",
         confirmButtonText: 'Ok',
       })
     }
