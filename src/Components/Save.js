@@ -20,6 +20,7 @@ function Save({ nominated, setNominated }) {
     Swal.fire({
       title: 'Nominations saved!',
       text: 'Make sure to check out the official list of nominees!',
+      confirmButtonColor: "#00806a",
       confirmButtonText: 'Ok',
     }).then(function () {
       window.location.reload();
