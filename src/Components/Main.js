@@ -41,7 +41,7 @@ function Main () {
           <div className="saveContainer">
             <Save nominated={nominated} setNominated={setNominated} />
           </div>
-          <Link to="/nominations" className="link">View nominees <span><i class="fas fa-arrow-right"></i></span></Link>
+          <Link to="/shoppies/nominations" className="link">View nominees <span><i class="fas fa-arrow-right"></i></span></Link>
           <ul className="nominations" id="nominations">
             {/* Nominations go here */}
             <Nominated nominated={nominated} setNominated={setNominated} />
@@ -60,7 +60,7 @@ function Main () {
           <div className="centerWrapper">
             <h2>Welcome to The Shoppies, Shopify's official movie awards! Search for and nominate up to five movies, and check out the list of nominees!</h2>
           </div>
-          <Link to="/nominations" className="link">View nominees <span><i className="fas fa-arrow-right"></i></span></Link>
+          <Link to="/shoppies/nominations" className="link">View nominees <span><i className="fas fa-arrow-right"></i></span></Link>
           <div className="centerWrapper">
           <form action="#">
             <label htmlFor="movieTitle" className="sr-only">Movie title:</label>
