@@ -5,7 +5,7 @@ import Loading from './Loading';
 
 function Nominations() {
 
-  const [savedNominations, setSavedNominations] = useState([]);
+  const [displayedNominations, setDisplayedNominations] = useState([]);
   const [loading, setLoading] = useState(false);
   const mountedRef = useRef(true);
 
@@ -21,7 +21,9 @@ function Nominations() {
           if (!mountedRef.current) return null;
           newState.push(data[key]);
         }
-        setSavedNominations(newState);
+        // Filter out duplicate nominations
+        const uniqueNominations = newState.filter((v, i, a) => a.findIndex(t => (t.Plot === v.Plot)) === i);
+        setDisplayedNominations([...uniqueNominations]);
         mountedRef.current = false
         setLoading(false)
       });
@@ -39,7 +41,7 @@ function Nominations() {
           </div>
           <ul className="nominations">
             {/* Saved nominations go here */}
-            {savedNominations.map((movie, index) => {
+            {displayedNominations.map((movie, index) => {
             return (
               <li key={index} className="movie">
                 <div className="imgContainer">
