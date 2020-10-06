@@ -34,7 +34,7 @@ function Nominations() {
     <>
       <main>
         <div className="wrapper">
-          <Link to="/shoppies" className="link2"><span><i className="fas fa-arrow-left"></i></span> Back</Link>
+          <Link to="/bestFlix" className="link2"><span><i className="fas fa-arrow-left"></i></span> Back</Link>
           <h3 className="awardNominees">Award nominees:</h3>
           <div className="loadingContainer">
             <Loading loading={loading} />
@@ -56,7 +56,7 @@ function Nominations() {
             )
           })}
           </ul>
-          <Link to="/shoppies" className="link2"><span><i className="fas fa-arrow-left"></i></span> Back</Link>
+          <Link to="/bestFlix" className="link2"><span><i className="fas fa-arrow-left"></i></span> Back</Link>
         </div>
       </main>
     </>
