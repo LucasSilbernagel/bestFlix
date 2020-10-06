@@ -1,13 +1,13 @@
-# The Shoppies
+# bestFlix
 
 A movie award nomination app built with React, Firebase, and a REST API.
 
 ## Description
 
-Welcome to The Shoppies, Shopify's official movie awards! Search for and nominate up to five movies, and check out the list of nominees!
+Welcome to bestFlix, the best movies of all time as voted by you! Search for and nominate up to five movies, and check out the list of nominees!
 
 ## Live Link
-https://lucassilbernagel.github.io/shoppies/
+https://lucassilbernagel.github.io/bestFlix
 
 ## API
 
