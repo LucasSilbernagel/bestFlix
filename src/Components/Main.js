@@ -30,13 +30,13 @@ function Main () {
     performSearch(event.target.value);
   }
 
-  // If user has nominated 5 movies, prevent them from searching for more.
-  if (nominated.length === 5) {
+  // If user has nominated 4 movies, prevent them from searching for more.
+  if (nominated.length === 4) {
     return (
       <main>
         <div className="wrapper">
           <div className="centerWrapper">
-            <h2>Welcome to The Shoppies, Shopify's official movie awards! Search for and nominate up to five movies, and check out the list of nominees!</h2>
+            <h2>Welcome to bestFlix, the best movies of all time as voted by you! Search for and nominate up to four movies, and check out the list of nominees!</h2>
           </div>
           <div className="saveContainer">
             <Save nominated={nominated} setNominated={setNominated} />
@@ -52,13 +52,13 @@ function Main () {
         </div>
       </main>
     );
-    // If user has nominated less than 5 movies, allow them to continue to nominate more.
+    // If user has nominated less than 4 movies, allow them to continue to nominate more.
   } else {
     return (
       <main>
         <div className="wrapper">
           <div className="centerWrapper">
-            <h2>Welcome to The Shoppies, Shopify's official movie awards! Search for and nominate up to five movies, and check out the list of nominees!</h2>
+            <h2>Welcome to bestFlix, the best movies of all time as voted by you! Search for and nominate up to four movies, and check out the list of nominees!</h2>
           </div>
           <Link to="/bestFlix/nominations" className="link">View nominees <span><i className="fas fa-arrow-right"></i></span></Link>
           <div className="centerWrapper">
