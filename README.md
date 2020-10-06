@@ -1,6 +1,6 @@
 # bestFlix
 
-A movie award nomination app built with React, Firebase, and a REST API.
+A movie award nomination app built with React, Firebase, and a REST API. I challenged myself to use only React Hooks, no class components.
 
 ## Description
 
