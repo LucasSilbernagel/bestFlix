@@ -12,7 +12,7 @@ function Save({ nominated, setNominated }) {
         Poster: movie.Poster,
         Title: movie.Title,
         Year: movie.Year,
-        Plot: movie.Plot
+        ID: movie.imdbID
       })
     })
     setNominated([]);

@@ -49,7 +49,7 @@ function Main () {
           <div className="saveContainer">
             <Save nominated={nominated} setNominated={setNominated} />
           </div>
-          <Link to="/bestFlix/nominations" className="link">View nominees <span><i class="fas fa-arrow-right"></i></span></Link>
+          <Link to="/bestFlix/nominations" className="link">View nominees <span><i className="fas fa-arrow-right"></i></span></Link>
           <ul className="nominations" id="nominations">
             {/* Nominations go here */}
             <Nominated nominated={nominated} setNominated={setNominated} />

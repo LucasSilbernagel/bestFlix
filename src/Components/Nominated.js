@@ -15,6 +15,7 @@ function Nominated({ nominated, setNominated }) {
   // If user has not nominated any movies, return nothing for this component
   if (!nominated) {
     return null;
+    
     // Display each movie the user nominates
   } else {
     return nominated.map((item, index) => {
