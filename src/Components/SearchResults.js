@@ -4,8 +4,8 @@ import Swal from 'sweetalert2';
 function SearchResults(props) {
 
   // Nominate a movie from search results
-  const handleClick = () => {
-    props.setNominated(props.nominated.concat(props));
+  const handleClick = (e) => {
+    props.setNominated(props.nominated.concat(e));
     // Sweet alerts
     if (props.nominated.length === 0) {
       Swal.fire({
@@ -46,7 +46,7 @@ function SearchResults(props) {
               <p><span className="info">Title</span>: {movie.Title}</p>
               <p><span className="info">Year</span>: {movie.Year}</p>
             </div>
-            <button onClick={handleClick} className="nominate">Nominate!</button>
+            <button onClick={() => handleClick(movie)} className="nominate">Nominate!</button>
           </li>
         );
       })
