@@ -38,18 +38,16 @@ function SearchResults(props) {
   } else {
       let newMovie = props.movies.map((movie) => {
         return (
-          <>
-            <li className="movie" key={movie.imdbID}>
-              <div className="imgContainer">
-                <img src={movie.Poster} alt={movie.Title} />
-              </div>
-              <div className="movieText">
-                <p><span className="info">Title</span>: {movie.Title}</p>
-                <p><span className="info">Year</span>: {movie.Year}</p>
-              </div>
-              <button onClick={handleClick} className="nominate">Nominate!</button>
-            </li>
-          </>
+          <li className="movie" key={movie.imdbID}>
+            <div className="imgContainer">
+              <img src={movie.Poster} alt={movie.Title} />
+            </div>
+            <div className="movieText">
+              <p><span className="info">Title</span>: {movie.Title}</p>
+              <p><span className="info">Year</span>: {movie.Year}</p>
+            </div>
+            <button onClick={handleClick} className="nominate">Nominate!</button>
+          </li>
         );
       })
     return newMovie;
