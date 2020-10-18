@@ -6,8 +6,8 @@ import Save from './Save';
 import Loading from './Loading';
 
 function Main () {
-  const [movie, setMovie] = useState({});
-  const [searched, setQuery] = useState({});
+  const [movies, setMovies] = useState([]);
+  const [searched, setQuery] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const [nominated, setNominated] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -16,10 +16,18 @@ function Main () {
   const performSearch = (query = `${searched}`) => {
     setLoading(true)
     setTimeout(() => {
-      fetch(`https://www.omdbapi.com/?type=movie&t=${query}&apikey=2b4018f5`)
-        .then(response => response.json())
-        .then(res => setMovie(res))
-        .then(setLoading(false))
+      fetch(`https://www.omdbapi.com/?type=movie&s=${query}&apikey=2b4018f5`).then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error('Something went wrong');
+        }
+      })
+      .then(res => setMovies(res.Search))
+      .catch((error) => {
+        console.log(error)
+      })
+      .then(setLoading(false))
     }, 1000)
   }
 
@@ -72,7 +80,7 @@ function Main () {
           </div>
           <ul className="results" id="results">
             {/* Search results go here */}
-            <SearchResults Poster={movie.Poster} Title={movie.Title} Year={movie.Year} Plot={movie.Plot} inputValue={inputValue} nominated={nominated} setNominated={setNominated} searched={searched} />
+            <SearchResults movies={movies} inputValue={inputValue} nominated={nominated} setNominated={setNominated} searched={searched} />
           </ul>
           <div className="saveContainer">
             <Save nominated={nominated} setNominated={setNominated} />
