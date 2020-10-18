@@ -22,7 +22,6 @@ function SearchResults(props) {
         confirmButtonText: 'Ok',
       })
     }
-    
     else {
       Swal.fire({
         title: 'Nominated!',
@@ -32,11 +31,34 @@ function SearchResults(props) {
     }
   }
 
+  // The ID of each nominated movie
+  let nominatedID = props.nominated.map((nominatedFilm) => {
+    return nominatedFilm.imdbID;
+  })
+
   // If nothing is searched, return nothing
   if (!props.movies) {
     return null;
   } else {
-      let newMovie = props.movies.map((movie) => {
+    let newMovie = props.movies.map((movie) => {
+
+      // If searched movie has already been nominated, disable the nomination button
+      if (nominatedID.includes(movie.imdbID)) {
+        return (
+          <li className="movie" key={movie.imdbID}>
+            <div className="imgContainer">
+              <img src={movie.Poster} alt={movie.Title} />
+            </div>
+            <div className="movieText">
+              <p><span className="info">Title</span>: {movie.Title}</p>
+              <p><span className="info">Year</span>: {movie.Year}</p>
+            </div>
+            <button disabled={true} className="nominate disabled">Nominate!</button>
+          </li>
+        );
+
+        // If searched movie has not been nominated, display the nomination button normally
+      } else {
         return (
           <li className="movie" key={movie.imdbID}>
             <div className="imgContainer">
@@ -49,6 +71,7 @@ function SearchResults(props) {
             <button onClick={() => handleClick(movie)} className="nominate">Nominate!</button>
           </li>
         );
+      }
       })
     return newMovie;
   }
