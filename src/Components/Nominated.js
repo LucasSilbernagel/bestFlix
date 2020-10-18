@@ -15,6 +15,7 @@ function Nominated({ nominated, setNominated }) {
   // If user has not nominated any movies, return nothing for this component
   if (!nominated) {
     return null;
+    
     // Display each movie the user nominates
   } else {
     return nominated.map((item, index) => {
@@ -27,7 +28,6 @@ function Nominated({ nominated, setNominated }) {
           <div className="movieText">
             <p><span className="info">Title</span>: {item.Title}</p>
             <p><span className="info">Year</span>: {item.Year}</p>
-            <p><span className="info">Plot</span>: {item.Plot}</p>
           </div>
           <button onClick={removeNomination} index={index} className="nominate">Remove nomination</button>
         </li>

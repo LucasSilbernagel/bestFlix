@@ -21,8 +21,8 @@ function Nominations() {
           if (!mountedRef.current) return null;
           newState.push(data[key]);
         }
-        // Filter out duplicate nominations
-        const uniqueNominations = newState.filter((v, i, a) => a.findIndex(t => (t.Plot === v.Plot)) === i);
+        // Filter out duplicate nominations by ID (imdbID)
+        const uniqueNominations = newState.filter((v, i, a) => a.findIndex(t => (t.ID === v.ID)) === i);
         setDisplayedNominations([...uniqueNominations]);
         mountedRef.current = false
         setLoading(false)
@@ -50,7 +50,6 @@ function Nominations() {
                 <div className="movieText">
                   <p><span className="info">Title</span>: {movie.Title}</p>
                   <p><span className="info">Year</span>: {movie.Year}</p>
-                  <p><span className="info">Plot</span>: {movie.Plot}</p>
                 </div>
               </li>
             )

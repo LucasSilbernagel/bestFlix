@@ -4,8 +4,8 @@ import Swal from 'sweetalert2';
 function SearchResults(props) {
 
   // Nominate a movie from search results
-  const handleClick = () => {
-    props.setNominated(props.nominated.concat(props));
+  const handleClick = (e) => {
+    props.setNominated(props.nominated.concat(e));
     // Sweet alerts
     if (props.nominated.length === 0) {
       Swal.fire({
@@ -22,7 +22,6 @@ function SearchResults(props) {
         confirmButtonText: 'Ok',
       })
     }
-    
     else {
       Swal.fire({
         title: 'Nominated!',
@@ -32,52 +31,49 @@ function SearchResults(props) {
     }
   }
 
-  // The plot of each nominated movie
-  let nominatedPlot = props.nominated.map((nominatedFilm) => {
-    return nominatedFilm.Plot;
+  // The ID of each nominated movie
+  let nominatedID = props.nominated.map((nominatedFilm) => {
+    return nominatedFilm.imdbID;
   })
 
   // If nothing is searched, return nothing
-  if (!props.Title) {
+  if (!props.movies) {
     return null;
-
-    // If searched movie has already been nominated, disable the Nominate button
-  } else if (nominatedPlot.includes(props.Plot)) {
-    return (
-      <>
-        <li className="searchResult">
-          <h3>Search result for <span>{props.searched}</span></h3>
-          <div className="imgContainer">
-            <img src={props.Poster} alt={props.Title}/>
-          </div>
-          <div className="movieText">
-            <p><span className="info">Title</span>: {props.Title}</p>
-            <p><span className="info">Year</span>: {props.Year}</p>
-            <p><span className="info">Plot</span>: {props.Plot}</p>
-          </div>
-          <button disabled={true} className="nominate disabled">Nominate!</button>
-        </li>
-      </>
-    );
-
-    // If movie is searched and has not been nominated, display in search results and allow user to nominate it
   } else {
-    return (
-      <>
-        <li className="searchResult">
-          <h3>Search result for <span>{props.searched}</span></h3>
-          <div className="imgContainer">
-            <img src={props.Poster} alt={props.Title}/>
-          </div>
-          <div className="movieText">
-            <p><span className="info">Title</span>: {props.Title}</p>
-            <p><span className="info">Year</span>: {props.Year}</p>
-            <p><span className="info">Plot</span>: {props.Plot}</p>
-          </div>
-          <button onClick={handleClick} className="nominate">Nominate!</button>
-        </li>
-      </>
-    );
+    let newMovie = props.movies.map((movie) => {
+
+      // If searched movie has already been nominated, disable the nomination button
+      if (nominatedID.includes(movie.imdbID)) {
+        return (
+          <li className="movie" key={movie.imdbID}>
+            <div className="imgContainer">
+              <img src={movie.Poster} alt={movie.Title} />
+            </div>
+            <div className="movieText">
+              <p><span className="info">Title</span>: {movie.Title}</p>
+              <p><span className="info">Year</span>: {movie.Year}</p>
+            </div>
+            <button disabled={true} className="nominate disabled">Nominate!</button>
+          </li>
+        );
+
+        // If searched movie has not been nominated, display the nomination button normally
+      } else {
+        return (
+          <li className="movie" key={movie.imdbID}>
+            <div className="imgContainer">
+              <img src={movie.Poster} alt={movie.Title} />
+            </div>
+            <div className="movieText">
+              <p><span className="info">Title</span>: {movie.Title}</p>
+              <p><span className="info">Year</span>: {movie.Year}</p>
+            </div>
+            <button onClick={() => handleClick(movie)} className="nominate">Nominate!</button>
+          </li>
+        );
+      }
+      })
+    return newMovie;
   }
 }
 
