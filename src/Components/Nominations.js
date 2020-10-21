@@ -22,15 +22,18 @@ function Nominations() {
           if (!mountedRef.current) return null;
           newState.push({ key: key, movie: data[key] });
         }
+
         // Filter out duplicate nominations by ID (imdbID)
-        // const uniqueNominations = newState.filter((v, i, a) => a.findIndex(t => (t.ID === v.ID)) === i);
-        setDisplayedNominations(newState);
+        const uniqueNominations = newState.filter((v, i, a) => a.findIndex(t => (t.movie.ID === v.movie.ID)) === i);
+
+        setDisplayedNominations(uniqueNominations);
         mountedRef.current = false
         setLoading(false)
       });
     }, 1000)
   }, []);
 
+  // Function to increase movie vote count by one on vote click
   const incrementVotes = (e) => {
     const ID = e.key;
     const dbRef = firebase.database().ref(`/${ID}/Votes`);

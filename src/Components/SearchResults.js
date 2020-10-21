@@ -7,6 +7,7 @@ function SearchResults(props) {
   const handleClick = (e) => {
     props.setNominated(props.nominated.concat(e));
     // Sweet alerts
+    // First movie nominated
     if (props.nominated.length === 0) {
       Swal.fire({
         title: 'Nominated!',
@@ -14,6 +15,7 @@ function SearchResults(props) {
         text: "You can nominate up to 4 movies. Once you're ready, save them to the official list of nominees!",
         confirmButtonText: 'Ok',
       })
+      // Max movies nominated
     } else if (props.nominated.length === 3) {
       Swal.fire({
         title: 'Nominated!',
