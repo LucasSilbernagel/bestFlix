@@ -7,7 +7,6 @@ function Nominations() {
 
   const [displayedNominations, setDisplayedNominations] = useState([]);
   const [loading, setLoading] = useState(false);
-  const mountedRef = useRef(true);
 
   // Pull saved movie nominations from firebase
   useEffect(() => {
@@ -19,7 +18,6 @@ function Nominations() {
         const newState = [];
         const data = response.val();
         for (let key in data) {
-          if (!mountedRef.current) return null;
           newState.push({ key: key, movie: data[key] });
         }
 
@@ -27,7 +25,6 @@ function Nominations() {
         const uniqueNominations = newState.filter((v, i, a) => a.findIndex(t => (t.movie.ID === v.movie.ID)) === i);
 
         setDisplayedNominations(uniqueNominations);
-        mountedRef.current = false
         setLoading(false)
       });
     }, 1000)
@@ -41,7 +38,6 @@ function Nominations() {
       const results = result.val()
       dbRef.set(results + 1)
     })
-    window.location.reload();
   }
 
   return (
