@@ -44,7 +44,7 @@ function Main () {
       <main>
         <div className="wrapper">
           <div className="centerWrapper">
-            <h2>Welcome to bestFlix, the best movies of all time as voted by you! Search for and nominate up to four movies, and check out the list of nominees!</h2>
+            <h2>Welcome to bestFlix, the best movies of all time as voted by you! Search for and nominate up to four movies, and vote for your favourites on the official list of nominees!</h2>
           </div>
           <div className="saveContainer">
             <Save nominated={nominated} setNominated={setNominated} />
@@ -66,7 +66,7 @@ function Main () {
       <main>
         <div className="wrapper">
           <div className="centerWrapper">
-            <h2>Welcome to bestFlix, the best movies of all time as voted by you! Search for and nominate up to four movies, and check out the list of nominees!</h2>
+            <h2>Welcome to bestFlix, the best movies of all time as voted by you! Search for and nominate up to four movies, and vote for your favourites on the official list of nominees!</h2>
           </div>
           <Link to="/bestFlix/nominations" className="link">View nominees <span><i className="fas fa-arrow-right"></i></span></Link>
           <div className="centerWrapper">

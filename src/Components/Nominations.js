@@ -24,7 +24,12 @@ function Nominations() {
         // Filter out duplicate nominations by ID (imdbID)
         const uniqueNominations = newState.filter((v, i, a) => a.findIndex(t => (t.movie.ID === v.movie.ID)) === i);
 
-        setDisplayedNominations(uniqueNominations);
+        // Sort nominations in descending order by number of votes
+        const sortedNominations = uniqueNominations.sort(function(a, b) {
+          return parseFloat(b.movie.Votes) - parseFloat(a.movie.Votes);
+        });
+
+        setDisplayedNominations(sortedNominations);
         setLoading(false)
       });
     }, 1000)
