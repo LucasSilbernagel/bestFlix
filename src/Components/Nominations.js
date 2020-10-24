@@ -13,22 +13,36 @@ function Nominations() {
   useEffect(() => {
     setLoading(true);
     const dbRef = firebase.database().ref();
+
     setTimeout(() => {
       dbRef.on('value', (response) => {
         const newState = [];
         const data = response.val();
         for (let key in data) {
           if (!mountedRef.current) return null;
-          newState.push(data[key]);
+          newState.push({ key: key, movie: data[key] });
         }
+
         // Filter out duplicate nominations by ID (imdbID)
-        const uniqueNominations = newState.filter((v, i, a) => a.findIndex(t => (t.ID === v.ID)) === i);
-        setDisplayedNominations([...uniqueNominations]);
+        const uniqueNominations = newState.filter((v, i, a) => a.findIndex(t => (t.movie.ID === v.movie.ID)) === i);
+
+        setDisplayedNominations(uniqueNominations);
         mountedRef.current = false
         setLoading(false)
       });
     }, 1000)
   }, []);
+
+  // Function to increase movie vote count by one on vote click
+  const incrementVotes = (e) => {
+    const ID = e.key;
+    const dbRef = firebase.database().ref(`/${ID}/Votes`);
+    dbRef.once('value', (result)=> {
+      const results = result.val()
+      dbRef.set(results + 1)
+    })
+    window.location.reload();
+  }
 
   return (
     <>
@@ -41,15 +55,17 @@ function Nominations() {
           </div>
           <ul className="nominations">
             {/* Saved nominations go here */}
-            {displayedNominations.map((movie, index) => {
+            {displayedNominations.map((movieArray) => {
             return (
-              <li key={index} className="movie">
+              <li key={movieArray.key} className="movie">
                 <div className="imgContainer">
-                  <img src={movie.Poster} alt={movie.Title} />
+                  <img src={movieArray.movie.Poster} alt={movieArray.movie.Title} />
                 </div>
                 <div className="movieText">
-                  <p><span className="info">Title</span>: {movie.Title}</p>
-                  <p><span className="info">Year</span>: {movie.Year}</p>
+                  <p><span className="info">Title</span>: {movieArray.movie.Title}</p>
+                  <p><span className="info">Year</span>: {movieArray.movie.Year}</p>
+                  <button className="voteButton" onClick={() => incrementVotes(movieArray)} aria-label="Vote"><i className="fas fa-heart"></i></button>
+                  <p><span className="info">Votes</span>: {movieArray.movie.Votes}</p>
                 </div>
               </li>
             )
