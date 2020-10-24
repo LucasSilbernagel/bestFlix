@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import firebase from './firebase';
 import Loading from './Loading';
@@ -7,7 +7,6 @@ function Nominations() {
 
   const [displayedNominations, setDisplayedNominations] = useState([]);
   const [loading, setLoading] = useState(false);
-  const mountedRef = useRef(true);
 
   // Pull saved movie nominations from firebase
   useEffect(() => {
@@ -19,15 +18,18 @@ function Nominations() {
         const newState = [];
         const data = response.val();
         for (let key in data) {
-          if (!mountedRef.current) return null;
           newState.push({ key: key, movie: data[key] });
         }
 
         // Filter out duplicate nominations by ID (imdbID)
         const uniqueNominations = newState.filter((v, i, a) => a.findIndex(t => (t.movie.ID === v.movie.ID)) === i);
 
-        setDisplayedNominations(uniqueNominations);
-        mountedRef.current = false
+        // Sort nominations in descending order by number of votes
+        const sortedNominations = uniqueNominations.sort(function(a, b) {
+          return parseFloat(b.movie.Votes) - parseFloat(a.movie.Votes);
+        });
+
+        setDisplayedNominations(sortedNominations);
         setLoading(false)
       });
     }, 1000)
@@ -35,13 +37,13 @@ function Nominations() {
 
   // Function to increase movie vote count by one on vote click
   const incrementVotes = (e) => {
+    console.log(e);
     const ID = e.key;
     const dbRef = firebase.database().ref(`/${ID}/Votes`);
     dbRef.once('value', (result)=> {
       const results = result.val()
       dbRef.set(results + 1)
     })
-    window.location.reload();
   }
 
   return (
