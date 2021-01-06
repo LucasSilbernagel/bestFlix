@@ -4,7 +4,7 @@ A movie award nomination app built with React, Firebase, and a REST API. I chall
 
 ## Description
 
-Welcome to bestFlix, the best movies of all time as voted by you! Search for and nominate up to four movies, and vote for your favourites on the official list of nominees!
+Welcome to bestFlix, the best movies of all time as voted by you! Search for and nominate up to four movies, and vote for your favourites on the official list of nominees.
 
 ## Live Link
 https://lucassilbernagel.github.io/bestFlix
