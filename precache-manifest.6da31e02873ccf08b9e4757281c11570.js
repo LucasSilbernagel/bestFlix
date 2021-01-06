@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "76485fe41aded533e57296779fdf8f7f",
+    "revision": "9c6a9a810f608f114467cc6ece61df13",
     "url": "/bestFlix/index.html"
   },
   {
-    "revision": "b42fda2ee76fb4eadd33",
+    "revision": "1c0e51469e2151cbbf23",
     "url": "/bestFlix/static/css/main.3452807f.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/bestFlix/static/js/2.91bd00bb.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b42fda2ee76fb4eadd33",
-    "url": "/bestFlix/static/js/main.abf45a3f.chunk.js"
+    "revision": "1c0e51469e2151cbbf23",
+    "url": "/bestFlix/static/js/main.7e1e4462.chunk.js"
   },
   {
     "revision": "58096b8728c7333479b0",
