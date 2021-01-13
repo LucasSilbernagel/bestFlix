@@ -12,7 +12,8 @@ function App() {
       <Header />      
       <Switch>
         <Route exact path="/bestFlix" component={Main} />
-        <Route path="/bestFlix/nominations" component={Nominations} />
+        <Route exact path="/bestFlix/nominations" component={Nominations} />
+        <Route component={Main} />
       </Switch>
       <Footer />
     </>
