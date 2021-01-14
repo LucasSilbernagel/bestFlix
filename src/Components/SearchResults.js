@@ -1,10 +1,14 @@
 import React, { useEffect, useRef } from "react";
 import Swal from 'sweetalert2';
 import firebase from './firebase';
+import { useHistory } from 'react-router-dom';
 
 function SearchResults({ movies, nominated, setNominated }) {
 
   let nominatedMovies = useRef(null);
+
+  const history = useHistory();
+  const newPage = () => history.push('/bestFlix/nominations');
 
   // If movies have been nominated, set them in the nominatedMovies ref
   useEffect(() => {
@@ -31,11 +35,10 @@ function SearchResults({ movies, nominated, setNominated }) {
     // Sweet alert
     Swal.fire({
       title: 'Nominations saved!',
-      text: 'Make sure to check out the official list of nominees!',
       confirmButtonColor: "#00806a",
       confirmButtonText: 'Ok',
     }).then(function () {
-      console.log("Link to nominations page");
+      newPage();
     })
   }
 
