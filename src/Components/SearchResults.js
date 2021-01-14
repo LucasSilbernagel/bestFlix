@@ -5,12 +5,12 @@ import { useHistory } from 'react-router-dom';
 
 function SearchResults({ movies, nominated, setNominated }) {
 
-  let nominatedMovies = useRef(null);
-
+  // When nominations are saved, show the nominations page
   const history = useHistory();
   const newPage = () => history.push('/bestFlix/nominations');
 
   // If movies have been nominated, set them in the nominatedMovies ref
+  let nominatedMovies = useRef(null);
   useEffect(() => {
     if (!nominated.length) {
       return;
@@ -34,7 +34,8 @@ function SearchResults({ movies, nominated, setNominated }) {
     setNominated([]);
     // Sweet alert
     Swal.fire({
-      title: 'Nominations saved!',
+      title: 'Nominations saved',
+      text: "Vote for your favourites on the list of nominees!",
       confirmButtonColor: "#00806a",
       confirmButtonText: 'Ok',
     }).then(function () {
@@ -52,8 +53,8 @@ function SearchResults({ movies, nominated, setNominated }) {
         title: 'Nominated!',
         text: "You can nominate up to 4 movies. Once you're ready, save them to the official list of nominees!",
         showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
+        confirmButtonColor: '#00806a',
+        cancelButtonColor: '#DAA520',
         confirmButtonText: 'Save nominations',
         cancelButtonText: 'Nominate more'
       }).then((result) => {
@@ -67,8 +68,8 @@ function SearchResults({ movies, nominated, setNominated }) {
         title: 'Nominated!',
         text: "You've nominated 4 movies! Save them to the official list of nominees, or change your nomination list first by removing one or more movies!",
         showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
+        confirmButtonColor: '#00806a',
+        cancelButtonColor: '#DAA520',
         confirmButtonText: 'Save nominations',
         cancelButtonText: 'Change nominations'
       }).then((result) => {
@@ -82,8 +83,8 @@ function SearchResults({ movies, nominated, setNominated }) {
       Swal.fire({
         title: 'Nominated!',
         showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
+        confirmButtonColor: '#00806a',
+        cancelButtonColor: '#DAA520',
         confirmButtonText: 'Save nominations',
         cancelButtonText: 'Nominate more'
       }).then((result) => {
