@@ -1,8 +1,13 @@
 import React from "react";
 import firebase from './firebase';
 import Swal from 'sweetalert2';
+import { useHistory } from 'react-router-dom';
 
 function Save({ nominated, setNominated }) {
+
+  // When nominations are saved, show the nominations page
+  const history = useHistory();
+  const newPage = () => history.push('/bestFlix/nominations');
 
   // Push saved movie nominations to firebase
   const saveNominations = () => {
@@ -19,12 +24,12 @@ function Save({ nominated, setNominated }) {
     setNominated([]);
     // Sweet alert
     Swal.fire({
-      title: 'Nominations saved!',
-      text: 'Make sure to check out the official list of nominees!',
+      title: 'Nominations saved',
+      text: "Vote for your favourites on the list of nominees!",
       confirmButtonColor: "#00806a",
       confirmButtonText: 'Ok',
     }).then(function () {
-      window.location.reload();
+      newPage();
     })
   }
 
