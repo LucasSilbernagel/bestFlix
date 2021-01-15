@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/bestFlix/static/css/main.3452807f.chunk.css",
-    "main.js": "/bestFlix/static/js/main.73cf11fb.chunk.js",
-    "main.js.map": "/bestFlix/static/js/main.73cf11fb.chunk.js.map",
+    "main.css": "/bestFlix/static/css/main.6544e1cd.chunk.css",
+    "main.js": "/bestFlix/static/js/main.4516ce6f.chunk.js",
+    "main.js.map": "/bestFlix/static/js/main.4516ce6f.chunk.js.map",
     "runtime-main.js": "/bestFlix/static/js/runtime-main.7a5ffe66.js",
     "runtime-main.js.map": "/bestFlix/static/js/runtime-main.7a5ffe66.js.map",
     "static/js/2.b348f6ca.chunk.js": "/bestFlix/static/js/2.b348f6ca.chunk.js",
     "static/js/2.b348f6ca.chunk.js.map": "/bestFlix/static/js/2.b348f6ca.chunk.js.map",
     "index.html": "/bestFlix/index.html",
-    "precache-manifest.7a5305ca75993d6ca093baaf0eee06e0.js": "/bestFlix/precache-manifest.7a5305ca75993d6ca093baaf0eee06e0.js",
+    "precache-manifest.6b60302838eb3a1669ae6f7e822a63ab.js": "/bestFlix/precache-manifest.6b60302838eb3a1669ae6f7e822a63ab.js",
     "service-worker.js": "/bestFlix/service-worker.js",
-    "static/css/main.3452807f.chunk.css.map": "/bestFlix/static/css/main.3452807f.chunk.css.map",
+    "static/css/main.6544e1cd.chunk.css.map": "/bestFlix/static/css/main.6544e1cd.chunk.css.map",
     "static/js/2.b348f6ca.chunk.js.LICENSE.txt": "/bestFlix/static/js/2.b348f6ca.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.7a5ffe66.js",
     "static/js/2.b348f6ca.chunk.js",
-    "static/css/main.3452807f.chunk.css",
-    "static/js/main.73cf11fb.chunk.js"
+    "static/css/main.6544e1cd.chunk.css",
+    "static/js/main.4516ce6f.chunk.js"
   ]
 }
