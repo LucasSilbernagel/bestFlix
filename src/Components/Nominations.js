@@ -66,8 +66,11 @@ function Nominations() {
                 <div className="movieText">
                   <p><span className="info">Title</span>: {movieArray.movie.Title}</p>
                   <p><span className="info">Year</span>: {movieArray.movie.Year}</p>
-                  <button className="voteButton" onClick={() => incrementVotes(movieArray)} aria-label="Vote"><i className="fas fa-heart"></i></button>
-                  <p><span className="info">Votes</span>: {movieArray.movie.Votes}</p>
+                  <button className="voteButton" onClick={() => incrementVotes(movieArray)} aria-label="Vote">
+                    <i className="fas fa-heart">
+                      <span className="voteCount">{movieArray.movie.Votes}</span>
+                    </i>
+                  </button>
                 </div>
               </li>
             )
