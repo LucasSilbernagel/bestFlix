@@ -32,7 +32,7 @@ function Nominations() {
         setDisplayedNominations(sortedNominations);
         setLoading(false)
       });
-    }, 100)
+    }, 1000)
   }, []);
 
   // Function to increase movie vote count by one on vote click
