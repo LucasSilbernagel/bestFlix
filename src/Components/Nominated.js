@@ -15,18 +15,20 @@ function Nominated({ nominated, setNominated }) {
   // If user has not nominated any movies, return nothing for this component
   if (!nominated.length) {
     return (
-      <li>No movies nominated</li>
+      <li>Nominate some movies to see them here!</li>
     )
     
     // Display each movie the user nominates
   } else {
     return nominated.map((item, index) => {
       return (
-        <li key={index} className="movie">
-          <div className="movieText">
-            <p><span className="info">Title</span>: {item.Title}</p>
+        <li key={index} className="nominatedItem">
+          <div>
+      
+              <p>{item.Title}</p>
+              <button onClick={removeNomination} index={index} className="nominate"><i className="fas fa-times"></i></button>
+            
           </div>
-          <button onClick={removeNomination} index={index} className="nominate"><i class="fas fa-times"></i></button>
         </li>
       );
     });

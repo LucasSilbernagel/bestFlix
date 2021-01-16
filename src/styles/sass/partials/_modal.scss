@@ -1,5 +1,6 @@
 .filmButton {
   background: transparent;
+  margin: 20px 0px;
   i {
     color: $white;
     font-size: 3rem;
@@ -18,14 +19,43 @@
   padding: 20px;
   margin-right: -50%;
   transform: translate(-50%, -50%);
+  text-align: center;
   ul {
     grid-template-columns: unset;
     display: block;
+    margin: 0;
+    .nominatedItem {
+      background: $lightBackground;
+      color: $black;
+      padding: 5px;
+      margin-bottom: 10px;
+      div {
+        display: flex;
+        justify-content: space-between;
+        p {
+          text-align: left;
+          padding: 0px 5px;
+        }
+        button {
+          height: 100%;
+          background: $accent2;
+          padding: 5px;
+          border-radius: 0;
+          &:hover,
+          &:focus {
+            background: $black;
+          }
+          i {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
   }
 }
 
 .overlay {
   position: fixed;
   inset: 0px;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.5);
 }

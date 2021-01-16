@@ -55,14 +55,14 @@ function Main () {
     return (
       <main>
         <div className="wrapper">
-          <button className="headerButton" onClick={openModal}><i className="fas fa-film"></i></button>
+          <button aria-label="view your nomination list" className="filmButton" onClick={openModal}><i className="fas fa-film"></i></button>
           <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         className="modal"
         overlayClassName="overlay"
+        role="dialog"
       >
-        {/* <button onClick={closeModal}>close</button> */}
         <ul>
           <Nominated nominated={nominated} setNominated={setNominated} />
             </ul>
@@ -83,12 +83,13 @@ function Main () {
     return (
       <main>
         <div className="wrapper">
-          <button className="filmButton" onClick={openModal}><i className="fas fa-film"></i></button>
+          <button aria-label="view your nomination list" className="filmButton" onClick={openModal}><i className="fas fa-film"></i></button>
           <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         className="modal"
         overlayClassName="overlay"
+        role="dialog"
       >
         {/* <button onClick={closeModal}>close</button> */}
         <ul>
