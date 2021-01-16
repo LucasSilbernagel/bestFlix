@@ -20,15 +20,25 @@
   margin-right: -50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  button {
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 20px;
+  }
   ul {
     grid-template-columns: unset;
     display: block;
     margin: 0;
+    li {
+      text-align: left;
+      font-size: 1.4rem;
+    }
     .nominatedItem {
       background: $lightBackground;
       color: $black;
       padding: 5px;
       margin-bottom: 10px;
+      font-size: 1rem;
       div {
         display: flex;
         justify-content: space-between;

@@ -3,3 +3,16 @@
   grid-template-columns: repeat(auto-fill, 335px);
 }
 }
+
+@media(min-width: 1000px) {
+  .filmButton {
+    margin-right: 250px;
+  }
+
+  .modal {
+    width: 500px;
+    li {
+      font-size: 1.5rem;
+    }
+  }
+}
