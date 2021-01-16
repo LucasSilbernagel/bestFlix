@@ -4,6 +4,9 @@ import Nominated from './Nominated';
 import { Link } from "react-router-dom";
 import Save from './Save';
 import Loading from './Loading';
+import Modal from 'react-modal';
+
+Modal.setAppElement('#root');
 
 function Main () {
   const [movies, setMovies] = useState([]);
@@ -11,6 +14,15 @@ function Main () {
   const [inputValue, setInputValue] = useState("");
   const [nominated, setNominated] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function closeModal(){
+    setIsOpen(false);
+  }
 
   // API call
   const performSearch = (query = `${searched}`) => {
@@ -43,20 +55,26 @@ function Main () {
     return (
       <main>
         <div className="wrapper">
+          <button className="headerButton" onClick={openModal}><i className="fas fa-film"></i></button>
+          <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        className="modal"
+        overlayClassName="overlay"
+      >
+        {/* <button onClick={closeModal}>close</button> */}
+        <ul>
+          <Nominated nominated={nominated} setNominated={setNominated} />
+            </ul>
+            <Save nominated={nominated} setNominated={setNominated} />
+      </Modal>
           <div className="centerWrapper">
             <h2>Welcome to bestFlix, the best movies of all time as voted by you! Search for and nominate up to four movies, and vote for your favourites on the official list of nominees!</h2>
           </div>
-          <div className="saveContainer">
-            <Save nominated={nominated} setNominated={setNominated} />
-          </div>
+          
           <Link to="/bestFlix/nominations" className="link">View nominees <span><i className="fas fa-arrow-right"></i></span></Link>
-          <ul className="nominations" id="nominations">
-            {/* Nominations go here */}
-            <Nominated nominated={nominated} setNominated={setNominated} />
-          </ul>
-          <div className="saveContainer">
-            <Save nominated={nominated} setNominated={setNominated} />
-          </div>
+          
+          
         </div>
       </main>
     );
@@ -65,6 +83,19 @@ function Main () {
     return (
       <main>
         <div className="wrapper">
+          <button className="filmButton" onClick={openModal}><i className="fas fa-film"></i></button>
+          <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        className="modal"
+        overlayClassName="overlay"
+      >
+        {/* <button onClick={closeModal}>close</button> */}
+        <ul>
+          <Nominated nominated={nominated} setNominated={setNominated} />
+            </ul>
+            <Save nominated={nominated} setNominated={setNominated} />
+      </Modal>
           <div className="centerWrapper">
             <h2>Welcome to bestFlix, the best movies of all time as voted by you! Search for and nominate up to four movies, and vote for your favourites on the official list of nominees.</h2>
           </div>
@@ -82,16 +113,7 @@ function Main () {
             {/* Search results go here */}
             <SearchResults movies={movies} inputValue={inputValue} nominated={nominated} setNominated={setNominated} searched={searched} />
           </ul>
-          <div className="saveContainer">
-            <Save nominated={nominated} setNominated={setNominated} />
-          </div>
-          <ul className="nominations" id="nominations">
-            {/* Nominations go here */}
-            <Nominated nominated={nominated} setNominated={setNominated} />
-          </ul>
-          <div className="saveContainer">
-            <Save nominated={nominated} setNominated={setNominated} />
-          </div>
+          
         </div>
       </main>
     );

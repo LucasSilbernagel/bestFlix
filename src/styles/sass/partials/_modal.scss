@@ -1,0 +1,31 @@
+.filmButton {
+  background: transparent;
+  i {
+    color: $white;
+    font-size: 3rem;
+  }
+}
+
+.modal {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  border: none;
+  background: $black none repeat scroll 0% 0%;
+  color: $white;
+  overflow: auto;
+  border-radius: 5px;
+  outline: none;
+  padding: 20px;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  ul {
+    grid-template-columns: unset;
+    display: block;
+  }
+}
+
+.overlay {
+  position: fixed;
+  inset: 0px;
+  background: rgba(255, 255, 255, 0.7);
+}
