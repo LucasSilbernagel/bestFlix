@@ -62,7 +62,8 @@ function Main () {
         className="modal"
         overlayClassName="overlay"
         role="dialog"
-      >
+          >
+            <button onClick={closeModal} className="sr-only">Close dialog</button>
         <ul>
           <Nominated nominated={nominated} setNominated={setNominated} />
             </ul>
@@ -90,7 +91,8 @@ function Main () {
         className="modal"
         overlayClassName="overlay"
         role="dialog"
-      >
+          >
+            <button onClick={closeModal} className="sr-only">Close dialog</button>
         {/* <button onClick={closeModal}>close</button> */}
         <ul>
           <Nominated nominated={nominated} setNominated={setNominated} />
