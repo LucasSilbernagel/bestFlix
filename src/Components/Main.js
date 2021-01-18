@@ -55,10 +55,15 @@ function Main () {
     return (
       <main>
         <div className="wrapper">
-          <button aria-label="view your nomination list" className="filmButton" onClick={openModal}>
-            <i className="fas fa-film"></i>
-            <span className="nominatedNumber">{nominated.length}</span>
-          </button>
+          <div className="buttonContainer">
+            <button aria-label="view your nomination list" className="bookmarkButton" onClick={openModal}>
+              <i className="fas fa-bookmark"></i>
+              <span className="nominatedNumber">{nominated.length}</span>
+            </button>
+            <Link to="/bestFlix/nominations" className="page2">
+              <i className="fas fa-film"></i>
+            </Link>
+          </div>
           <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
@@ -76,9 +81,6 @@ function Main () {
             <h2>Welcome to bestFlix, the best movies of all time as voted by you! Search for and nominate up to four movies, and vote for your favourites on the official list of nominees!</h2>
           </div>
           
-          <Link to="/bestFlix/nominations" className="link">View nominees <span><i className="fas fa-arrow-right"></i></span></Link>
-          
-          
         </div>
       </main>
     );
@@ -87,7 +89,14 @@ function Main () {
     return (
       <main>
         <div className="wrapper">
-          <button aria-label="view your nomination list" className="filmButton" onClick={openModal}><i className="fas fa-film"></i></button>
+          <div className="buttonContainer">
+            <button aria-label="view your nomination list" className="bookmarkButton" onClick={openModal}>
+              <i className="fas fa-bookmark"></i>
+            </button>
+            <Link to="/bestFlix/nominations" className="page2">
+              <i className="fas fa-film"></i>
+            </Link>
+          </div>
           <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
@@ -105,7 +114,6 @@ function Main () {
           <div className="centerWrapper">
             <h2>Welcome to bestFlix, the best movies of all time as voted by you! Search for and nominate up to four movies, and vote for your favourites on the official list of nominees.</h2>
           </div>
-          <Link to="/bestFlix/nominations" className="link">View nominees <span><i className="fas fa-arrow-right"></i></span></Link>
           <div className="centerWrapper">
           <form action="#">
             <label htmlFor="movieTitle" className="sr-only">Movie title:</label>
@@ -127,10 +135,15 @@ function Main () {
     return (
       <main>
         <div className="wrapper">
-          <button aria-label="view your nomination list" className="filmButton" onClick={openModal}>
-            <i className="fas fa-film"></i>
-            <span className="nominatedNumber">{nominated.length}</span>
-          </button>
+          <div className="buttonContainer">
+            <button aria-label="view your nomination list" className="bookmarkButton" onClick={openModal}>
+              <i className="fas fa-bookmark"></i>
+              <span className="nominatedNumber">{nominated.length}</span>
+            </button>
+            <Link to="/bestFlix/nominations" className="page2">
+              <i className="fas fa-film"></i>
+            </Link>
+          </div>
           <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
@@ -148,7 +161,6 @@ function Main () {
           <div className="centerWrapper">
             <h2>Welcome to bestFlix, the best movies of all time as voted by you! Search for and nominate up to four movies, and vote for your favourites on the official list of nominees.</h2>
           </div>
-          <Link to="/bestFlix/nominations" className="link">View nominees <span><i className="fas fa-arrow-right"></i></span></Link>
           <div className="centerWrapper">
           <form action="#">
             <label htmlFor="movieTitle" className="sr-only">Movie title:</label>
