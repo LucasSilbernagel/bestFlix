@@ -26,7 +26,7 @@ function Nominated({ nominated, setNominated }) {
           <div>
       
               <p>{item.Title}</p>
-              <button onClick={removeNomination} index={index} className="nominate"><i className="fas fa-times"></i></button>
+              <button aria-label="remove nomination" onClick={removeNomination} index={index} className="nominate"><i className="fas fa-times"></i></button>
             
           </div>
         </li>
