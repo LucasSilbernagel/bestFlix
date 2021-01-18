@@ -34,7 +34,7 @@ function SearchResults({ movies, nominated, setNominated }) {
     setNominated([]);
     // Sweet alert
     Swal.fire({
-      title: 'Nominations saved',
+      title: 'Nominations submitted',
       text: "Vote for your favourites on the list of nominees!",
       confirmButtonColor: "#00806a",
       confirmButtonText: 'Ok',
@@ -55,7 +55,7 @@ function SearchResults({ movies, nominated, setNominated }) {
         showCancelButton: true,
         confirmButtonColor: '#00806a',
         cancelButtonColor: '#DAA520',
-        confirmButtonText: 'Save nominations',
+        confirmButtonText: 'Submit nominations',
         cancelButtonText: 'Nominate more'
       }).then((result) => {
         if (result.isConfirmed) {
@@ -66,11 +66,11 @@ function SearchResults({ movies, nominated, setNominated }) {
     } else if (nominated.length === 3) {
       Swal.fire({
         title: 'Nominated!',
-        text: "You've nominated 4 movies! Save them to the official list of nominees, or change your nomination list first by removing one or more movies!",
+        text: "You've nominated 4 movies! Submit them to the official list of nominees, or change your nomination list first by removing one or more movies!",
         showCancelButton: true,
         confirmButtonColor: '#00806a',
         cancelButtonColor: '#DAA520',
-        confirmButtonText: 'Save nominations',
+        confirmButtonText: 'Submit nominations',
         cancelButtonText: 'Change nominations'
       }).then((result) => {
         if (result.isConfirmed) {
@@ -85,7 +85,7 @@ function SearchResults({ movies, nominated, setNominated }) {
         showCancelButton: true,
         confirmButtonColor: '#00806a',
         cancelButtonColor: '#DAA520',
-        confirmButtonText: 'Save nominations',
+        confirmButtonText: 'Submit nominations',
         cancelButtonText: 'Nominate more'
       }).then((result) => {
         if (result.isConfirmed) {
