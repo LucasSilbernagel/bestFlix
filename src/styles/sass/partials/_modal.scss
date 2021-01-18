@@ -1,6 +1,18 @@
 .filmButton {
   background: transparent;
   margin: 20px 0px;
+  position: relative;
+  .nominatedNumber {
+    position: absolute;
+    right: -5px;
+    top: -2px;
+    background: $accent2;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    padding-top: 5px;
+    color: $white;
+  }
   i {
     color: $white;
     font-size: 3rem;
