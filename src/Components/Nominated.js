@@ -4,7 +4,7 @@ function Nominated({ nominated, setNominated }) {
 
   // Remove nomination from list when Remove button is clicked
   const removeNomination = (e) => {
-    let index = e.target.getAttribute("index");
+    let index = e.currentTarget.getAttribute("index");
     if (index > -1) {
       let newArray = [...nominated];
       newArray.splice(index, 1);
