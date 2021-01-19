@@ -24,7 +24,7 @@ function Save({ nominated, setNominated }) {
     setNominated([]);
     // Sweet alert
     Swal.fire({
-      title: 'Nominations saved',
+      title: 'Nominations submitted',
       text: "Vote for your favourites on the list of nominees!",
       confirmButtonColor: "#00806a",
       confirmButtonText: 'Ok',
@@ -38,7 +38,7 @@ function Save({ nominated, setNominated }) {
     return null;
   } else {
     return (
-      <button onClick={saveNominations}>Save nominations!</button>
+      <button onClick={saveNominations}>Submit nominations!</button>
     );
   }
 }

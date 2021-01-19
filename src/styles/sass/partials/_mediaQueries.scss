@@ -1,5 +1,26 @@
-@media(min-width: 370px) {
+@media(min-width: 710px) {
   ul {
-  grid-template-columns: repeat(auto-fill, 335px);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 335px);
+    gap: 20px 20px;
+    flex-direction: unset;
+    max-width: unset;
+    margin: unset;
+    li {
+      margin-bottom: unset;
+    }
+  }
 }
+
+@media(min-width: 1000px) {
+  .buttonContainer {
+    padding-right: 250px;
+  }
+
+  .modal {
+    width: 500px;
+    li {
+      font-size: 1.5rem;
+    }
+  }
 }
