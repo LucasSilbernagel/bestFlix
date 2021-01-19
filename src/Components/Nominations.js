@@ -47,39 +47,45 @@ function Nominations() {
   }
 
   return (
-    <>
-      <main>
-        <div className="wrapper">
-          <Link to="/bestFlix" className="link2"><span><i className="fas fa-arrow-left"></i></span> Back</Link>
-          <h3 className="awardNominees">Award nominees:</h3>
-          <div className="loadingContainer">
-            <Loading loading={loading} />
-          </div>
-          <ul className="nominations">
-            {/* Saved nominations go here */}
-            {displayedNominations.map((movieArray) => {
-            return (
-              <li key={movieArray.key} className="movie">
-                <div className="imgContainer">
-                  <img src={movieArray.movie.Poster} alt={movieArray.movie.Title} />
-                </div>
-                <div className="movieText">
-                  <p><span className="info">Title</span>: {movieArray.movie.Title}</p>
-                  <p><span className="info">Year</span>: {movieArray.movie.Year}</p>
-                  <button className="voteButton" onClick={() => incrementVotes(movieArray)} aria-label="Vote">
-                    <i className="fas fa-heart">
-                      <span className="voteCount">{movieArray.movie.Votes}</span>
-                    </i>
-                  </button>
-                </div>
-              </li>
-            )
-          })}
-          </ul>
-          <Link to="/bestFlix" className="link2"><span><i className="fas fa-arrow-left"></i></span> Back</Link>
+    <main>
+      <div className="wrapper">
+
+        {/* Link to return to main page */}
+        <Link to="/bestFlix" className="link"><span><i className="fas fa-arrow-left"></i></span> Back</Link>
+
+        <h3 className="awardNominees">Award nominees:</h3>
+
+        {/* Loading animation goes here */}
+        <div className="loadingContainer">
+          <Loading loading={loading} />
         </div>
-      </main>
-    </>
+
+        <ul className="nominations">
+          {/* Saved nominations go here */}
+          {displayedNominations.map((movieArray) => {
+          return (
+            <li key={movieArray.key} className="movie">
+              <div className="imgContainer">
+                <img src={movieArray.movie.Poster} alt={movieArray.movie.Title} />
+              </div>
+              <div className="movieText">
+                <p><span className="info">Title</span>: {movieArray.movie.Title}</p>
+                <p><span className="info">Year</span>: {movieArray.movie.Year}</p>
+                <button className="voteButton" onClick={() => incrementVotes(movieArray)} aria-label="Vote">
+                  <i className="fas fa-heart">
+                    <span className="voteCount">{movieArray.movie.Votes}</span>
+                  </i>
+                </button>
+              </div>
+            </li>
+          )
+        })}
+        </ul>
+
+        {/* Link to return to main page */}
+        <Link to="/bestFlix" className="link"><span><i className="fas fa-arrow-left"></i></span> Back</Link>
+      </div>
+    </main>
   );
 }
 

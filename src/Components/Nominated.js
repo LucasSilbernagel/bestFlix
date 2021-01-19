@@ -24,10 +24,8 @@ function Nominated({ nominated, setNominated }) {
       return (
         <li key={index} className="nominatedItem">
           <div>
-      
-              <p>{item.Title}</p>
-              <button aria-label="remove nomination" onClick={removeNomination} index={index} className="nominate"><i className="fas fa-times"></i></button>
-            
+            <p>{item.Title}</p>
+            <button aria-label="remove nomination" onClick={removeNomination} index={index} className="nominate"><i className="fas fa-times"></i></button>
           </div>
         </li>
       );

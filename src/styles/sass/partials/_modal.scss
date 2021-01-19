@@ -1,3 +1,4 @@
+// Button to open modal
 .bookmarkButton {
   background: transparent;
   margin: 20px 0px;
@@ -87,6 +88,7 @@
   background: rgba(255, 255, 255, 0.5);
 }
 
+// Prevent page scroll when modal is open
 .ReactModal__Body--open {
   overflow-y: hidden;
 }

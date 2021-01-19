@@ -103,9 +103,9 @@ function SearchResults({ movies, nominated, setNominated }) {
   // If nothing is searched, return nothing
   if (!movies) {
     return null;
+
   } else {
     let newMovie = movies.map((movie) => {
-
       // If searched movie has already been nominated, disable the nomination button
       if (nominatedID.includes(movie.imdbID)) {
         return (
