@@ -60,7 +60,7 @@ function Main () {
               <i className="fas fa-bookmark"></i>
               <span className="nominatedNumber">{nominated.length}</span>
             </button>
-            <Link to="/bestFlix/nominations" className="page2">
+            <Link aria-label="view the official nomination list" to="/bestFlix/nominations" className="page2">
               <i className="fas fa-film"></i>
             </Link>
           </div>
@@ -93,7 +93,7 @@ function Main () {
             <button aria-label="view your nomination list" className="bookmarkButton" onClick={openModal}>
               <i className="fas fa-bookmark"></i>
             </button>
-            <Link to="/bestFlix/nominations" className="page2">
+            <Link aria-label="view the official nomination list" to="/bestFlix/nominations" className="page2">
               <i className="fas fa-film"></i>
             </Link>
           </div>
@@ -140,7 +140,7 @@ function Main () {
               <i className="fas fa-bookmark"></i>
               <span className="nominatedNumber">{nominated.length}</span>
             </button>
-            <Link to="/bestFlix/nominations" className="page2">
+            <Link aria-label="view the official nomination list" to="/bestFlix/nominations" className="page2">
               <i className="fas fa-film"></i>
             </Link>
           </div>

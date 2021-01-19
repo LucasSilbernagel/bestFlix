@@ -51,7 +51,7 @@ function SearchResults({ movies, nominated, setNominated }) {
     if (nominated.length === 0) {
       Swal.fire({
         title: 'Nominated!',
-        text: "You can nominate up to 4 movies. Once you're ready, save them to the official list of nominees!",
+        text: "You can nominate up to 4 movies. Once you're ready, submit them to the official list of nominees!",
         showCancelButton: true,
         confirmButtonColor: '#00806a',
         cancelButtonColor: '#DAA520',
