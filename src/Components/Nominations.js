@@ -37,7 +37,6 @@ function Nominations() {
 
   // Function to increase movie vote count by one on vote click
   const incrementVotes = (e) => {
-    console.log(e);
     const ID = e.key;
     const dbRef = firebase.database().ref(`/${ID}/Votes`);
     dbRef.once('value', (result)=> {
