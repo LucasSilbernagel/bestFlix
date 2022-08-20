@@ -122,8 +122,12 @@ ul {
     bottom: 0;
   }
   .voteButton:hover,
-  .voteButton:focus {
+  .voteButton:focus,
+  .voteButton:disabled {
     color: $accent;
+  }
+  .voteButton:disabled {
+    cursor: no-drop;
   }
   .fa-heart {
     position: relative;

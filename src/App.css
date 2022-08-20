@@ -235,11 +235,571 @@ html {
   overflow: hidden;
 }
 
+body {
+  background: #FBF7ED;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+}
+
 .wrapper {
   max-width: 1440px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 0 auto;
+}
+
+.centerWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+}
+
+h2,
+input {
+  max-width: 600px;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  background: #004C3F;
+  color: #FFFFFF;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+button:hover,
+button:focus {
+  cursor: pointer;
+  background: #007f69;
+}
+
+button:active {
+  background: #000000;
+}
+
+header {
+  background: #FBF7ED;
+}
+
+h1 {
+  font-weight: 700;
+  font-style: italic;
+  text-align: center;
+  font-size: 2.8rem;
+  margin: 0;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  color: #004C3F;
+}
+
+.loadingContainer {
+  text-align: center;
+}
+
+.lds-spinner {
+  color: #FFFFFF;
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-spinner div {
+  -webkit-transform-origin: 40px 40px;
+          transform-origin: 40px 40px;
+  -webkit-animation: lds-spinner 1.2s linear infinite;
+          animation: lds-spinner 1.2s linear infinite;
+}
+
+.lds-spinner div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 37px;
+  width: 6px;
+  height: 18px;
+  border-radius: 20%;
+  background: #FFFFFF;
+}
+
+.lds-spinner div:nth-child(1) {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-animation-delay: -1.1s;
+          animation-delay: -1.1s;
+}
+
+.lds-spinner div:nth-child(2) {
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
+  -webkit-animation-delay: -1s;
+          animation-delay: -1s;
+}
+
+.lds-spinner div:nth-child(3) {
+  -webkit-transform: rotate(60deg);
+          transform: rotate(60deg);
+  -webkit-animation-delay: -0.9s;
+          animation-delay: -0.9s;
+}
+
+.lds-spinner div:nth-child(4) {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  -webkit-animation-delay: -0.8s;
+          animation-delay: -0.8s;
+}
+
+.lds-spinner div:nth-child(5) {
+  -webkit-transform: rotate(120deg);
+          transform: rotate(120deg);
+  -webkit-animation-delay: -0.7s;
+          animation-delay: -0.7s;
+}
+
+.lds-spinner div:nth-child(6) {
+  -webkit-transform: rotate(150deg);
+          transform: rotate(150deg);
+  -webkit-animation-delay: -0.6s;
+          animation-delay: -0.6s;
+}
+
+.lds-spinner div:nth-child(7) {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-animation-delay: -0.5s;
+          animation-delay: -0.5s;
+}
+
+.lds-spinner div:nth-child(8) {
+  -webkit-transform: rotate(210deg);
+          transform: rotate(210deg);
+  -webkit-animation-delay: -0.4s;
+          animation-delay: -0.4s;
+}
+
+.lds-spinner div:nth-child(9) {
+  -webkit-transform: rotate(240deg);
+          transform: rotate(240deg);
+  -webkit-animation-delay: -0.3s;
+          animation-delay: -0.3s;
+}
+
+.lds-spinner div:nth-child(10) {
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+  -webkit-animation-delay: -0.2s;
+          animation-delay: -0.2s;
+}
+
+.lds-spinner div:nth-child(11) {
+  -webkit-transform: rotate(300deg);
+          transform: rotate(300deg);
+  -webkit-animation-delay: -0.1s;
+          animation-delay: -0.1s;
+}
+
+.lds-spinner div:nth-child(12) {
+  -webkit-transform: rotate(330deg);
+          transform: rotate(330deg);
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+@-webkit-keyframes lds-spinner {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes lds-spinner {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+main {
+  background: #004C3F;
+  color: #FFFFFF;
+  padding-top: 20px;
+  padding-bottom: 100px;
+  text-align: right;
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 1.7;
+  margin: 0;
+  text-align: left;
+}
+
+.buttonContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.page2 {
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  margin: 20px 0px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+.page2:hover, .page2:focus {
+  background: #007f69;
+}
+
+.page2:active {
+  background: #000000;
+}
+
+.page2 i {
+  color: #FFFFFF;
+  font-size: 3rem;
+}
+
+.link {
+  display: block;
+  color: #FFFFFF;
+  font-size: 1.5rem;
+  text-decoration: none;
+  text-align: center;
+  position: relative;
+  font-weight: 700;
+  max-width: 300px;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.link span {
+  position: absolute;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  left: 85px;
+}
+
+.link:hover span, .link:focus span {
+  -webkit-transform: translateX(-0.4em);
+          transform: translateX(-0.4em);
+}
+
+.movieTitle {
+  width: 100%;
+  font-size: 1.5rem;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 335px;
+  margin: 0 auto;
+}
+
+ul li {
+  margin-bottom: 40px;
 }
 
 .movie {
-  background: red;
+  padding: 10px;
+  background: #FFFFFF;
+  color: #004C3F;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px;
+  position: relative;
+  text-align: left;
+}
+
+.movie h3 {
+  text-align: center;
+  color: #FF0000;
+}
+
+.movie .imgContainer {
+  padding: 10px;
+  background: #FBF7ED;
+}
+
+.movie .movieText {
+  background: #FBF7ED;
+  padding: 10px;
+  width: 100%;
+}
+
+.movie .info {
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.movie .voteButton {
+  background: transparent;
+  border-radius: 50%;
+  color: #FF0000;
+  font-size: 3.5rem;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.movie .voteButton:hover,
+.movie .voteButton:focus,
+.movie .voteButton:disabled {
+  color: #004C3F;
+}
+
+.movie .voteButton:disabled {
+  cursor: no-drop;
+}
+
+.movie .fa-heart {
+  position: relative;
+  font-size: 5rem;
+}
+
+.movie .fa-heart .voteCount {
+  position: absolute;
+  color: #FFFFFF;
+  left: 30%;
+  top: 25%;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.disabled,
+.disabled:hover,
+.disabled:focus,
+.disabled:active {
+  background: #b8babb;
+  cursor: default;
+}
+
+.awardNominees {
+  text-align: center;
+  font-size: 2rem;
+  border-bottom: 1px solid #FFFFFF;
+  padding: 5px;
+  max-width: 330px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+.bookmarkButton {
+  background: transparent;
+  margin: 20px 0px;
+  position: relative;
+  margin-right: 40px;
+}
+
+.bookmarkButton .nominatedNumber {
+  position: absolute;
+  right: 0;
+  top: -2px;
+  background: #FF0000;
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  padding-top: 5px;
+  color: #FFFFFF;
+}
+
+.bookmarkButton i {
+  color: #FFFFFF;
+  font-size: 3rem;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: none;
+  background: #000000 none repeat scroll 0% 0%;
+  color: #FFFFFF;
+  overflow: auto;
+  border-radius: 5px;
+  outline: none;
+  padding: 20px;
+  margin-right: -50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.modal button {
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 20px;
+}
+
+.modal ul {
+  -ms-grid-columns: unset;
+      grid-template-columns: unset;
+  display: block;
+  margin: 0;
+}
+
+.modal ul li {
+  text-align: left;
+  font-size: 1.4rem;
+}
+
+.modal ul .nominatedItem {
+  background: #FBF7ED;
+  color: #000000;
+  padding: 5px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.modal ul .nominatedItem div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.modal ul .nominatedItem div p {
+  text-align: left;
+  padding: 0px 5px;
+}
+
+.modal ul .nominatedItem div button {
+  height: 100%;
+  background: #000000;
+  padding: 5px;
+  border-radius: 0;
+}
+
+.modal ul .nominatedItem div button:hover, .modal ul .nominatedItem div button:focus {
+  background: #FF0000;
+}
+
+.modal ul .nominatedItem div button i {
+  font-size: 1.5rem;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.ReactModal__Body--open {
+  overflow-y: hidden;
+}
+
+footer {
+  background: #FBF7ED;
+}
+
+footer p {
+  margin: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #004C3F;
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+footer p a {
+  color: #004C3F;
+}
+
+footer p a:hover,
+footer p a:focus {
+  text-decoration: none;
+}
+
+@media (min-width: 710px) {
+  ul {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (335px)[auto-fill];
+        grid-template-columns: repeat(auto-fill, 335px);
+    gap: 20px 20px;
+    -webkit-box-orient: unset;
+    -webkit-box-direction: unset;
+        -ms-flex-direction: unset;
+            flex-direction: unset;
+    max-width: unset;
+    margin: unset;
+  }
+  ul li {
+    margin-bottom: unset;
+  }
+}
+
+@media (min-width: 1000px) {
+  .buttonContainer {
+    padding-right: 250px;
+  }
+  .modal {
+    width: 500px;
+  }
+  .modal li {
+    font-size: 1.5rem;
+  }
 }
 /*# sourceMappingURL=App.css.map */

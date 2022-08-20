@@ -7,6 +7,7 @@ function Nominations() {
 
   const [displayedNominations, setDisplayedNominations] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [disabledButtons, setDisabledButtons] = useState([])
 
   // Pull saved movie nominations from firebase
   useEffect(() => {
@@ -37,6 +38,11 @@ function Nominations() {
 
   // Function to increase movie vote count by one on vote click
   const incrementVotes = (e) => {
+    setDisabledButtons(prevButtons => {
+      const newButtons = [...prevButtons]
+      newButtons.push(e.movie.ID)
+      return newButtons
+    })
     const ID = e.key;
     const dbRef = firebase.database().ref(`/${ID}/Votes`);
     dbRef.once('value', (result)=> {
@@ -70,9 +76,9 @@ function Nominations() {
               <div className="movieText">
                 <p><span className="info">Title</span>: {movieArray.movie.Title}</p>
                 <p><span className="info">Year</span>: {movieArray.movie.Year}</p>
-                <button className="voteButton" onClick={() => incrementVotes(movieArray)} aria-label="Vote">
+                <button disabled={disabledButtons.includes(movieArray.movie.ID)} className="voteButton" onClick={() => incrementVotes(movieArray)} aria-label="Vote">
                   <i className="fas fa-heart">
-                    <span className="voteCount">{movieArray.movie.Votes}</span>
+                    <span className="voteCount" style={movieArray.movie.Votes < 10 ? {paddingLeft: '7px'} : {}}>{movieArray.movie.Votes}</span>
                   </i>
                 </button>
               </div>
