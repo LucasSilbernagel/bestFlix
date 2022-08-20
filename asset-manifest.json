@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/bestFlix/static/css/main.96752867.chunk.css",
-    "main.js": "/bestFlix/static/js/main.b384df33.chunk.js",
-    "main.js.map": "/bestFlix/static/js/main.b384df33.chunk.js.map",
-    "runtime-main.js": "/bestFlix/static/js/runtime-main.ba189610.js",
-    "runtime-main.js.map": "/bestFlix/static/js/runtime-main.ba189610.js.map",
-    "static/js/2.7079794e.chunk.js": "/bestFlix/static/js/2.7079794e.chunk.js",
-    "static/js/2.7079794e.chunk.js.map": "/bestFlix/static/js/2.7079794e.chunk.js.map",
+    "main.css": "/bestFlix/static/css/main.c16f4ede.chunk.css",
+    "main.js": "/bestFlix/static/js/main.adc55538.chunk.js",
+    "main.js.map": "/bestFlix/static/js/main.adc55538.chunk.js.map",
+    "runtime-main.js": "/bestFlix/static/js/runtime-main.5f78aa6c.js",
+    "runtime-main.js.map": "/bestFlix/static/js/runtime-main.5f78aa6c.js.map",
+    "static/js/2.ad695eae.chunk.js": "/bestFlix/static/js/2.ad695eae.chunk.js",
+    "static/js/2.ad695eae.chunk.js.map": "/bestFlix/static/js/2.ad695eae.chunk.js.map",
     "index.html": "/bestFlix/index.html",
-    "precache-manifest.387ed56f0f8490a3e33897da5ee51141.js": "/bestFlix/precache-manifest.387ed56f0f8490a3e33897da5ee51141.js",
+    "precache-manifest.674b2944b52722cbf621aba8e6b64a66.js": "/bestFlix/precache-manifest.674b2944b52722cbf621aba8e6b64a66.js",
     "service-worker.js": "/bestFlix/service-worker.js",
-    "static/css/main.96752867.chunk.css.map": "/bestFlix/static/css/main.96752867.chunk.css.map",
-    "static/js/2.7079794e.chunk.js.LICENSE.txt": "/bestFlix/static/js/2.7079794e.chunk.js.LICENSE.txt"
+    "static/css/main.c16f4ede.chunk.css.map": "/bestFlix/static/css/main.c16f4ede.chunk.css.map",
+    "static/js/2.ad695eae.chunk.js.LICENSE.txt": "/bestFlix/static/js/2.ad695eae.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.ba189610.js",
-    "static/js/2.7079794e.chunk.js",
-    "static/css/main.96752867.chunk.css",
-    "static/js/main.b384df33.chunk.js"
+    "static/js/runtime-main.5f78aa6c.js",
+    "static/js/2.ad695eae.chunk.js",
+    "static/css/main.c16f4ede.chunk.css",
+    "static/js/main.adc55538.chunk.js"
   ]
 }
